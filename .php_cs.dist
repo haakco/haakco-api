@@ -1,0 +1,18 @@
+<?php
+
+$finder = PhpCsFixer\Finder::create()
+  ->exclude('bootstrap/cache')
+  ->exclude('node_modules')
+  ->exclude('storage')
+  ->in(__DIR__)
+  ->notName('*.blade.php')
+  ->notName('.phpstorm.meta.php')
+  ->notName('_ide_*.php')
+;
+
+return PhpCsFixer\Config::create()
+    ->setRules([
+        '@PSR12' => true,
+    ])
+    ->setFinder($finder)
+;
