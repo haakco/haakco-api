@@ -9,20 +9,10 @@ namespace App\Models;
 /**
  * App\Models\Taggable
  *
- * @property int $tag_id
- * @property \Illuminate\Support\Carbon $created_at
- * @property \Illuminate\Support\Carbon $updated_at
- * @property string $taggable_type
- * @property int $taggable_id
  * @property-read \App\Models\Tag $tag
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Taggable newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Taggable newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Taggable query()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Taggable whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Taggable whereTagId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Taggable whereTaggableId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Taggable whereTaggableType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Taggable whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class Taggable extends \App\Models\BaseModel\BaseModel

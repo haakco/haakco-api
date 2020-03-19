@@ -14,7 +14,7 @@
         "name": "fedeisas/laravel-mail-css-inliner",
         "version": "2.3.1",
         "source": {
-          "url": "https://github.com/haakco/aws-sdk-php-laravel.git",
+          "url": "https://github.com/haakco/laravel-mail-css-inliner.git",
           "type": "git",
           "reference": "master"
         }
