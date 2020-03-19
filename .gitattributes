@@ -1,0 +1,11 @@
+* text=auto
+*.css linguist-vendored
+*.scss linguist-vendored
+*.js linguist-vendored
+CHANGELOG.md export-ignore
+pharbin filter=lfs diff=lfs merge=lfs -text
+tools/* filter=lfs diff=lfs merge=lfs -text
+tools/phpmd filter=lfs diff=lfs merge=lfs -text
+.phpstorm.meta.php filter=lfs diff=lfs merge=lfs -text
+_ide_helper.php filter=lfs diff=lfs merge=lfs -text
+public/vendor/**/app.js filter=lfs diff=lfs merge=lfs -text
