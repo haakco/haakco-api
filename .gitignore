@@ -108,3 +108,5 @@ $RECYCLE.BIN/
 !/storage/api-docs/.gitkeep
 !**/.gitkeep
 !**/.gitignore
+cghooks.lock
+
