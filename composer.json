@@ -67,7 +67,7 @@
     "hashids/hashids": "^4.0",
     "irazasyed/laravel-gamp": "^1.5",
     "kalnoy/nestedset": "^5.0",
-    "laravel/framework": "^7.1",
+    "laravel/framework": "^7.2",
     "laravel/helpers": "^1.2",
     "laravel/horizon": "^4.0",
     "laravel/passport": "^8.4",
