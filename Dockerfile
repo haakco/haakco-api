@@ -1,4 +1,4 @@
-FROM haakco/ubuntu1910-php74
+FROM haakco/ubuntu1910-php74-haakco-composer-cache
 
 USER web
 

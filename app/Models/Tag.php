@@ -9,6 +9,14 @@ namespace App\Models;
 /**
  * App\Models\Tag
  *
+ * @property int $id
+ * @property mixed $uuid
+ * @property \Illuminate\Support\Carbon $created_at
+ * @property \Illuminate\Support\Carbon $updated_at
+ * @property mixed $name
+ * @property mixed $slug
+ * @property string|null $type
+ * @property int|null $order_column
  * @property-read \Kalnoy\Nestedset\Collection|\App\Models\Tag[] $children
  * @property-read int|null $children_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\FileTag[] $file_tags
@@ -28,6 +36,14 @@ namespace App\Models;
  * @method static \Kalnoy\Nestedset\QueryBuilder|\App\Models\Tag newModelQuery()
  * @method static \Kalnoy\Nestedset\QueryBuilder|\App\Models\Tag newQuery()
  * @method static \Kalnoy\Nestedset\QueryBuilder|\App\Models\Tag query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag whereOrderColumn($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag whereType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag whereUuid($value)
  * @mixin \Eloquent
  */
 class Tag extends \App\Models\BaseModel\BaseModel
