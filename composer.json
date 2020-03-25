@@ -19,22 +19,6 @@
           "reference": "master"
         }
       }
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "beyondcode/laravel-websockets",
-        "version": "1.4.1",
-        "source": {
-          "url": "https://github.com/haakco/laravel-websockets.git",
-          "type": "git",
-          "reference": "master"
-        }
-      }
-    },
-    {
-      "type": "git",
-      "url": "https://github.com/haakco/laravel-mail-css-inliner.git"
     }
   ],
   "require": {
@@ -51,7 +35,6 @@
     "aws/aws-sdk-php-laravel": "^3.5",
     "barryvdh/laravel-ide-helper": "^2.6",
     "barryvdh/laravel-translation-manager": "^0.5",
-    "beyondcode/laravel-websockets": "^1.4",
     "chojnicki/video-platforms-parser": "^1.2",
     "fedeisas/laravel-mail-css-inliner": "^2.3.1",
     "fideloper/proxy": "^4.3",
@@ -81,17 +64,17 @@
     "maatwebsite/excel": "^3.1",
     "marktopper/doctrine-dbal-timestamp-type": "^1.0",
     "nao-pon/flysystem-google-drive": "^1.1",
+    "nyholm/psr7": "^1.2",
     "pusher/pusher-php-server": "^4.1",
     "ryancco/laravel-uuid-models": "^1.0",
     "sllh/composer-versions-check": "^2.0",
     "spatie/array-to-xml": "^2.11",
-    "spatie/laravel-activitylog": "^3.11",
+    "spatie/laravel-activitylog": "^3.14",
     "spatie/laravel-backup": "^6.8",
     "spatie/laravel-permission": "^3.10",
     "spatie/laravel-responsecache": "^6.6",
     "spatie/laravel-tags": "^2.6",
     "spatie/once": "^2.2",
-    "symfony/psr-http-message-bridge": "^2.0",
     "thomaswelton/laravel-gravatar": "^1.2",
     "watson/rememberable": "^4.0",
     "webpatser/laravel-uuid": "^3.0",
@@ -160,9 +143,11 @@
     ],
     "post-update-cmd": [
       "vendor/bin/cghooks update",
-      "@php artisan horizon:publish",
-      "@php artisan telescope:publish",
-      "composer update-ide"
+      "php artisan horizon:publish",
+      "php artisan telescope:publish",
+      "php artisan clear-compiled",
+      "php artisan ide-helper:generate",
+      "php artisan ide-helper:meta"
     ],
     "update-ide": [
       "php artisan clear-compiled",
