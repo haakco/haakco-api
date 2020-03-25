@@ -44,8 +44,8 @@ return [
 
                 'cluster' => env('PUSHER_APP_CLUSTER'),
                 'encrypted' => true,
-                'host' => env('LARAVEL_WEBSOCKET_HOST'),
-                'port' => env('LARAVEL_WEBSOCKET_PORT', 6001),
+                'host' => env('PUSHER_HOST'),
+                'port' => env('PUSHER_PORT', 6001),
                 'scheme' => 'http'
             ],
         ],
