@@ -67,7 +67,7 @@ return [
             ) : [],
         ],
 
-        \App\Models\Enum\DatabaseEnum::DB_POSTGRESQL => [
+        'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
             'write' => [

@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 
 class DatabaseLibrary
 {
-    public static function removePgsqlUpdatedAtFunction(): void
+    public static function removeUpdatedAtFunction(): void
     {
         DB::statement(
         /** @lang PostgreSQL */
@@ -14,7 +14,7 @@ class DatabaseLibrary
         );
     }
 
-    public static function createPgsqlUpdatedAtFunction(): void
+    public static function createUpdatedAtFunction(): void
     {
         DB::statement(
         /** @lang PostgreSQL */
