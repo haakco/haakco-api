@@ -1,5 +1,6 @@
 <?php
 
+use \App\Models\Enum\DatabaseEnum;
 use Illuminate\Database\Migrations\Migration;
 
 class AddUpdateTimestampFunction extends Migration
@@ -7,11 +8,17 @@ class AddUpdateTimestampFunction extends Migration
 
     public function up()
     {
-        \App\Libraries\Helper\DatabaseLibrary::createUpdatedAtFunction();
+        //Only run this when we are using postgresql
+        if (env('DB_CONNECTION') === DatabaseEnum::DB_POSTGRESQL) {
+            \App\Libraries\Helper\DatabaseLibrary::createPgsqlUpdatedAtFunction();
+        }
     }
 
     public function down()
     {
-        \App\Libraries\Helper\DatabaseLibrary::removeUpdatedAtFunction();
+        //Only run this when we are using postgresql
+        if (env('DB_CONNECTION') === DatabaseEnum::DB_POSTGRESQL) {
+            \App\Libraries\Helper\DatabaseLibrary::removePgsqlUpdatedAtFunction();
+        }
     }
 }
