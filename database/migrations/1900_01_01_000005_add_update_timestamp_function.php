@@ -7,11 +7,11 @@ class AddUpdateTimestampFunction extends Migration
 
     public function up()
     {
-        \App\Libraries\Helper\DatabaseLibrary::createUpdatedAtFunction();
+            \App\Libraries\Helper\DatabaseLibrary::createPgsqlUpdatedAtFunction();
     }
 
     public function down()
     {
-        \App\Libraries\Helper\DatabaseLibrary::removeUpdatedAtFunction();
+            \App\Libraries\Helper\DatabaseLibrary::removePgsqlUpdatedAtFunction();
     }
 }
