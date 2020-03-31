@@ -1,2 +1,6 @@
 #!/usr/bin/env bash
-docker exec -it $(docker ps  | grep haakco-laravel_laravel | awk '{print $1}') /bin/bash
+docker exec \
+  -it \
+  "$(docker ps --filter "name=laravel-api" --filter "status=running" --filter "ancestor=haakco/haakco-api" | grep -v 'CONTAINER ID' | head -n 1 |  awk '{print $1}')" \
+  /bin/bash
+

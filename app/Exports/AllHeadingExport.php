@@ -21,7 +21,7 @@ class AllHeadingExport implements FromCollection, WithHeadings
             $this->headingArray = $headings;
         } else {
             $first = $this->collection->first();
-            $this->headingArray = array_keys($first);
+            $this->headingArray = array_keys((array)$first);
         }
     }
 
