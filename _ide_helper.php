@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 7.3.0 on 2020-03-25 10:50:59.
+ * Generated for Laravel 7.3.0 on 2020-03-31 08:54:57.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -10187,7 +10187,9 @@ namespace Illuminate\Support\Facades {
          * Gets the preferred format for the response by inspecting, in the following order:
          *   * the request format set using setRequestFormat
          *   * the values of the Accept HTTP header
-         *   * the content type of the body of the request.
+         * 
+         * Note that if you use this method, you should send the "Vary: Accept" header
+         * in the response to prevent any issues with intermediary HTTP caches.
          *
          * @static 
          */ 
@@ -16099,108 +16101,6 @@ namespace App\Facades {
  
 }
 
-namespace Appstract\LushHttp { 
-
-    /**
-     * 
-     *
-     * @see \Appstract\LushHttp\Lush
-     */ 
-    class LushFacade {
-        
-        /**
-         * Set the url with parameters.
-         *
-         * @param $url
-         * @param array|object $parameters
-         * @return \Appstract\LushHttp\Lush 
-         * @static 
-         */ 
-        public static function url($url, $parameters = [])
-        {
-                        /** @var \Appstract\LushHttp\Lush $instance */
-                        return $instance->url($url, $parameters);
-        }
-        
-        /**
-         * Set headers.
-         *
-         * @param array $headers
-         * @return \Appstract\LushHttp\Lush 
-         * @static 
-         */ 
-        public static function headers($headers)
-        {
-                        /** @var \Appstract\LushHttp\Lush $instance */
-                        return $instance->headers($headers);
-        }
-        
-        /**
-         * Set options.
-         *
-         * @param array $options
-         * @return \Appstract\LushHttp\Lush 
-         * @static 
-         */ 
-        public static function options($options)
-        {
-                        /** @var \Appstract\LushHttp\Lush $instance */
-                        return $instance->options($options);
-        }
-        
-        /**
-         * Reset all request options.
-         *
-         * @return \Appstract\LushHttp\Lush 
-         * @static 
-         */ 
-        public static function reset()
-        {
-                        /** @var \Appstract\LushHttp\Lush $instance */
-                        return $instance->reset();
-        }
-        
-        /**
-         * Post as Json.
-         *
-         * @return \Appstract\LushHttp\Lush 
-         * @static 
-         */ 
-        public static function asJson()
-        {
-                        /** @var \Appstract\LushHttp\Lush $instance */
-                        return $instance->asJson();
-        }
-        
-        /**
-         * Post as form params.
-         *
-         * @return \Appstract\LushHttp\Lush 
-         * @static 
-         */ 
-        public static function asFormParams()
-        {
-                        /** @var \Appstract\LushHttp\Lush $instance */
-                        return $instance->asFormParams();
-        }
-        
-        /**
-         * Create a request.
-         *
-         * @param $method
-         * @return \Appstract\LushHttp\Response\LushResponse 
-         * @static 
-         */ 
-        public static function request($method)
-        {
-                        /** @var \Appstract\LushHttp\Lush $instance */
-                        return $instance->request($method);
-        }
-         
-    }
- 
-}
-
 namespace Aws\Laravel { 
 
     /**
@@ -21055,8 +20955,6 @@ namespace  {
     class Uuid extends \Webpatser\Uuid\Uuid {}
 
     class UserPermission extends \App\Facades\UserPermission {}
-
-    class Lush extends \Appstract\LushHttp\LushFacade {}
 
     class AWS extends \Aws\Laravel\AwsFacade {}
 
