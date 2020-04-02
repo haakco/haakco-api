@@ -134,7 +134,7 @@ class UserRightsLibrary
         );
     }
 
-    public function teamRolesSync() {
-
+    public function teamRolesSync()
+    {
     }
 }
