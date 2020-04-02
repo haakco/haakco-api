@@ -133,4 +133,8 @@ class UserRightsLibrary
             ]
         );
     }
+
+    public function teamRolesSync() {
+
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Models\Enum\Alert\AlertTypesEnum;
 use App\Models\User;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
@@ -17,24 +18,33 @@ class UserNotifyEvent implements ShouldBroadcast
     use InteractsWithSockets;
     use SerializesModels;
 
+    private User $user;
     public string $message;
-    public User $user;
+    public string $alertType = AlertTypesEnum::ALERT_TYPE_INFO;
 
     /**
      * Create a new event instance.
      *
+     * @param \App\Models\User $user
      * @param string $message
+     * @param string $alertType
      */
-    public function __construct(User $user, string $message)
+    public function __construct(User $user, string $message, string $alertType = AlertTypesEnum::ALERT_TYPE_INFO)
     {
         $this->user = $user;
         $this->message = $message;
-        Log::info($this->message);
+        $this->alertType = $alertType;
+
+        Log::info(
+            'Sent message to: ' . $this->user->uuid,
+            [
+                $this->message,
+            ]
+        );
     }
 
     /**
      * Get the channels the event should broadcast on.
-     *
      * @return Channel|array
      */
     public function broadcastOn()
@@ -42,8 +52,8 @@ class UserNotifyEvent implements ShouldBroadcast
         return new PrivateChannel('user.' . $this->user->uuid);
     }
 
-    public function broadcastAs()
-    {
-        return 'UserNotifyEvent';
-    }
+//    public function broadcastAs()
+//    {
+//        return 'UserNotifyEvent';
+//    }
 }
