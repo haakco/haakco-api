@@ -14,7 +14,7 @@ class CreateOauthClientsTable extends Migration
     public function up()
     {
         Schema::create('oauth_clients', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id')->index()->nullable();
             $table->timestampTz('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestampTz('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));

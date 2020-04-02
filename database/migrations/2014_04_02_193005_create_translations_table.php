@@ -25,7 +25,7 @@ class CreateTranslationsTable extends Migration
                     ->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->timestampTz('updated_at')
                     ->default(DB::raw('CURRENT_TIMESTAMP'));
-                $table->integer('status')->default(0);
+                $table->bigInteger('status')->default(0);
                 $table->text('locale');
                 $table->text('group');
                 $table->text('key');

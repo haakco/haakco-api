@@ -33,7 +33,7 @@ return [
         'pusher' => [
             'driver' => 'pusher',
             'key' => env('PUSHER_APP_KEY'),
-            'secret' => env('PUSHER_APP_SECRET'),
+            'secret' => env('PUSHER_APP_SECRET', null),
             'app_id' => env('PUSHER_APP_ID'),
             'options' => [
 //                // Default options
@@ -44,7 +44,7 @@ return [
 
                 'cluster' => env('PUSHER_APP_CLUSTER'),
                 'encrypted' => true,
-                'host' => env('PUSHER_HOST'),
+                'host' => env('PUSHER_HOST', 'laravel-echo-server.server'),
                 'port' => env('PUSHER_PORT', 6001),
                 'scheme' => 'http'
             ],

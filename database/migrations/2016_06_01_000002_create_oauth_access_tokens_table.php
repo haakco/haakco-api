@@ -18,7 +18,7 @@ class CreateOauthAccessTokensTable extends Migration
             $table->unsignedBigInteger('user_id')->index()->nullable();
             $table->timestampTz('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestampTz('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->unsignedInteger('client_id');
+            $table->unsignedBigInteger('client_id');
             $table->text('name')->nullable();
             $table->text('scopes')->nullable();
             $table->boolean('revoked');

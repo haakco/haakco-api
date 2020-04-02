@@ -18,3 +18,7 @@ Broadcast::channel('App.User.{id}', function ($user, $id) {
 Broadcast::channel('user.{id}', function ($user) {
     return Auth::check() && Auth::user()->id === $user->id;
 });
+
+Broadcast::channel('private-user.{uuid}', function ($user) {
+    return Auth::check() && Auth::user()->id === $user->id;
+});

@@ -30,11 +30,10 @@ class NotifyUserCommand extends Command
      */
     public function handle()
     {
-        $userTim = User::query()
-            ->where('email', 'tim@haak.co')
+        $adminUser = User::query()
+            ->where('email', config('haakco.primary_user.email'))
             ->first();
 
-        Auth::login($userTim);
-        event(new UserNotifyEvent($userTim, $userTim));
+        event(new UserNotifyEvent($adminUser, 'Test message'));
     }
 }
