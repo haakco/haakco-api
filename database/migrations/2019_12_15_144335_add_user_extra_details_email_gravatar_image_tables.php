@@ -39,6 +39,9 @@ class AddUserExtraDetailsEmailGravatarImageTables extends Migration
             'users.user_emails',
             function (Blueprint $table) {
                 $table->bigIncrements('id');
+                $table->uuid('uuid')
+                    ->default(\Illuminate\Support\Facades\DB::raw('uuid_generate_v4()'))
+                    ->unique();
                 $table->timestampTz('created_at')
                     ->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->timestampTz('updated_at')
@@ -64,13 +67,13 @@ class AddUserExtraDetailsEmailGravatarImageTables extends Migration
             'users.email_gravatar',
             function (Blueprint $table) {
                 $table->bigIncrements('id');
+                $table->uuid('uuid')
+                    ->default(\Illuminate\Support\Facades\DB::raw('uuid_generate_v4()'))
+                    ->unique();
                 $table->timestampTz('created_at')
                     ->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->timestampTz('updated_at')
                     ->default(DB::raw('CURRENT_TIMESTAMP'));
-                $table->uuid('uuid')
-                    ->default(\Illuminate\Support\Facades\DB::raw('uuid_generate_v4()'))
-                    ->unique();
                 $table->boolean('exists')->default(false);
                 $table->unsignedBigInteger('email_id');
                 $table->text('url');
@@ -87,6 +90,9 @@ class AddUserExtraDetailsEmailGravatarImageTables extends Migration
             'users.user_image',
             function (Blueprint $table) {
                 $table->bigIncrements('id');
+                $table->uuid('uuid')
+                    ->default(\Illuminate\Support\Facades\DB::raw('uuid_generate_v4()'))
+                    ->unique();
                 $table->timestampTz('created_at')
                     ->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->timestampTz('updated_at')

@@ -120,7 +120,6 @@ class FileMimeTypes extends Migration
 
         \App\Libraries\Helper\DatabaseLibrary::setUpdatedAtTrigger('files.mime_type_extensions');
 
-
         Schema::create(
             'files.mime_type_extra',
             function (Blueprint $table) {

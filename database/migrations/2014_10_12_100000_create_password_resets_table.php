@@ -17,12 +17,12 @@ class CreatePasswordResetsTable extends Migration
             'password_resets',
             function (Blueprint $table) {
                 $table->bigIncrements('id');
-                $table->timestampTz('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-                $table->timestampTz('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-                $table->text('email')->index();
                 $table->uuid('uuid')
                     ->default(\Illuminate\Support\Facades\DB::raw('uuid_generate_v4()'))
                     ->unique();
+                $table->timestampTz('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+                $table->timestampTz('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+                $table->text('email')->index();
                 $table->text('token');
             }
         );

@@ -111,7 +111,7 @@ class UserLibrary
                 return $imageFile->url;
             }
             // To Do get image url
-            return '';
+            return $imageFile->url;
         }
         $email = $user->email;
 
