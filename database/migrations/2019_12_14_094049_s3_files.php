@@ -86,6 +86,9 @@ VALUES (3, 'c7c93518-3487-47de-b898-dab267fc0edf', 'google');"
             'files.file_type_tags',
             function (Blueprint $table) {
                 $table->bigIncrements('id');
+                $table->uuid('uuid')
+                    ->default(\Illuminate\Support\Facades\DB::raw('uuid_generate_v4()'))
+                    ->unique();
                 $table->timestampTz('created_at')
                     ->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->timestampTz('updated_at')
@@ -158,6 +161,9 @@ VALUES (3, 'c7c93518-3487-47de-b898-dab267fc0edf', 'google');"
             'files.file_extra',
             function (Blueprint $table) {
                 $table->bigIncrements('id');
+                $table->uuid('uuid')
+                    ->default(\Illuminate\Support\Facades\DB::raw('uuid_generate_v4()'))
+                    ->unique();
                 $table->timestampTz('created_at')
                     ->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->timestampTz('updated_at')

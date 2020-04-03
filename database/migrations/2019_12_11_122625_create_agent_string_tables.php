@@ -94,6 +94,9 @@ values (0, '990b671b-9591-4c11-ac2b-797578206c81', 0, 'Unknown')"
             'agent_strings.agent_string_operating_systems',
             function (Blueprint $table) {
                 $table->bigIncrements('id');
+                $table->uuid('uuid')
+                    ->default(\Illuminate\Support\Facades\DB::raw('uuid_generate_v4()'))
+                    ->unique();
                 $table->timestampTz('created_at')
                     ->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->timestampTz('updated_at')
@@ -154,6 +157,9 @@ values (0, 'af6f7708-378a-4362-9b38-625ff4b6f917', 'Unknown')"
             'agent_strings.agent_string_device_manufacturers',
             function (Blueprint $table) {
                 $table->bigIncrements('id');
+                $table->uuid('uuid')
+                    ->default(\Illuminate\Support\Facades\DB::raw('uuid_generate_v4()'))
+                    ->unique();
                 $table->timestampTz('created_at')
                     ->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->timestampTz('updated_at')
@@ -207,6 +213,9 @@ values (0, 'af6f7708-378a-4362-9b38-625ff4b6f917', 'Unknown')"
             'agent_strings.agent_string_device_models',
             function (Blueprint $table) {
                 $table->bigIncrements('id');
+                $table->uuid('uuid')
+                    ->default(\Illuminate\Support\Facades\DB::raw('uuid_generate_v4()'))
+                    ->unique();
                 $table->timestampTz('created_at')
                     ->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->timestampTz('updated_at')
@@ -256,6 +265,9 @@ values (0, 'af6f7708-378a-4362-9b38-625ff4b6f917', 'Unknown')"
             'agent_strings.agent_string_devices',
             function (Blueprint $table) {
                 $table->bigIncrements('id');
+                $table->uuid('uuid')
+                    ->default(\Illuminate\Support\Facades\DB::raw('uuid_generate_v4()'))
+                    ->unique();
                 $table->timestampTz('created_at')
                     ->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->timestampTz('updated_at')
@@ -315,6 +327,9 @@ values (3, '428c723c-3d1b-4d64-ba6a-ae7db2bb8ae8', 'PC')"
             'agent_strings.agent_string_device_subs',
             function (Blueprint $table) {
                 $table->bigIncrements('id');
+                $table->uuid('uuid')
+                    ->default(\Illuminate\Support\Facades\DB::raw('uuid_generate_v4()'))
+                    ->unique();
                 $table->timestampTz('created_at')
                     ->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->timestampTz('updated_at')
@@ -363,6 +378,9 @@ values (3, '428c723c-3d1b-4d64-ba6a-ae7db2bb8ae8', 'PC')"
             'agent_strings.agent_string_device_sub_wbs',
             function (Blueprint $table) {
                 $table->bigIncrements('id');
+                $table->uuid('uuid')
+                    ->default(\Illuminate\Support\Facades\DB::raw('uuid_generate_v4()'))
+                    ->unique();
                 $table->timestampTz('created_at')
                     ->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->timestampTz('updated_at')
@@ -412,6 +430,9 @@ values (3, '428c723c-3d1b-4d64-ba6a-ae7db2bb8ae8', 'PC')"
             'agent_strings.agent_string_device_browsers',
             function (Blueprint $table) {
                 $table->bigIncrements('id');
+                $table->uuid('uuid')
+                    ->default(\Illuminate\Support\Facades\DB::raw('uuid_generate_v4()'))
+                    ->unique();
                 $table->timestampTz('created_at')
                     ->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->timestampTz('updated_at')
@@ -465,6 +486,9 @@ values
             'agent_strings.agent_string_device_browser_engines',
             function (Blueprint $table) {
                 $table->bigIncrements('id');
+                $table->uuid('uuid')
+                    ->default(\Illuminate\Support\Facades\DB::raw('uuid_generate_v4()'))
+                    ->unique();
                 $table->timestampTz('created_at')
                     ->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->timestampTz('updated_at')
@@ -491,6 +515,9 @@ values
             'agent_strings.agent_string_extras',
             function (Blueprint $table) {
                 $table->bigIncrements('id');
+                $table->uuid('uuid')
+                    ->default(\Illuminate\Support\Facades\DB::raw('uuid_generate_v4()'))
+                    ->unique();
                 $table->timestampTz('created_at')
                     ->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->timestampTz('updated_at')

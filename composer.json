@@ -31,7 +31,7 @@
     "ext-pdo": "*",
     "ext-simplexml": "*",
     "appstract/laravel-opcache": "^4.0",
-    "aws/aws-sdk-php": "^3.133",
+    "aws/aws-sdk-php": "^3.134",
     "aws/aws-sdk-php-laravel": "^3.5",
     "barryvdh/laravel-ide-helper": "^2.6",
     "barryvdh/laravel-translation-manager": "^0.5",

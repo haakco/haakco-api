@@ -141,6 +141,9 @@ class CreatePermissionTables extends Migration
             $tableNames['model_has_permissions'],
             function (Blueprint $table) use ($tableNames, $columnNames) {
                 $table->unsignedBigInteger('permission_id');
+                $table->uuid('uuid')
+                    ->default(\Illuminate\Support\Facades\DB::raw('uuid_generate_v4()'))
+                    ->unique();
 
                 $table->text('model_type');
                 $table->unsignedBigInteger($columnNames['model_morph_key']);
@@ -165,6 +168,9 @@ class CreatePermissionTables extends Migration
             $tableNames['model_has_roles'],
             function (Blueprint $table) use ($tableNames, $columnNames) {
                 $table->unsignedBigInteger('role_id');
+                $table->uuid('uuid')
+                    ->default(\Illuminate\Support\Facades\DB::raw('uuid_generate_v4()'))
+                    ->unique();
 
                 $table->text('model_type');
                 $table->unsignedBigInteger($columnNames['model_morph_key']);

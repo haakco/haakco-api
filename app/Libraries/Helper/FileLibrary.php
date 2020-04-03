@@ -128,7 +128,7 @@ class FileLibrary
                 'original_file_name' => $file->getClientOriginalName(),
                 'original_file_extension' => $originalExtension,
             ]
-        );
+        )->refresh();
 
         $fileExtra = FileExtra::create(
             [

@@ -14,8 +14,10 @@ class FileController extends Controller
     public function getFile(File $file): ?StreamedResponse
     {
         if (!$file->is_private) {
+            response();
             return Storage::disk(config('filesystems.cloud'))
-                ->download('file.jpg', $file->name);
+                ->response($file->name)
+                ->setTtl(3600);
         }
         abort(400, 'File does not exist!');
     }
@@ -31,7 +33,8 @@ class FileController extends Controller
             // ToDo: Needs more tests for private files
 
             return Storage::disk(config('filesystems.cloud'))
-                ->download('file.jpg', $file->name);
+                ->response($file->name)
+                ->setTtl(3600);
         }
         abort('File does not exist!');
     }

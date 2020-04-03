@@ -15,12 +15,12 @@ class CreateFailedJobsTable extends Migration
     {
         Schema::create('failed_jobs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestampTz('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestampTz('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestampTz('failed_at')->useCurrent();
             $table->uuid('uuid')
                 ->default(\Illuminate\Support\Facades\DB::raw('uuid_generate_v4()'))
                 ->unique();
+            $table->timestampTz('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestampTz('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestampTz('failed_at')->useCurrent();
             $table->text('connection');
             $table->text('queue');
             $table->longText('payload');

@@ -62,30 +62,31 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapApiRoutes()
     {
-        Route::prefix('/')
-            ->namespace($this->namespace)
-            ->group(base_path('routes/api.fake.php'));
-
         Route::prefix(config('haakco.api_path', 'api/v1'))
             ->namespace($this->namespace)
-            ->group(base_path('routes/api.php'));
-
-
-        // Users endpoints
-        Route::prefix(config('haakco.api_path', 'api/v1'))
-            ->namespace($this->namespace)
-            ->group(base_path('routes/api.auth.user.php'));
-
+            ->group(base_path('routes/api.auth.admin.user.php'));
 
         // Uptime Test endpoints
         Route::prefix(config('haakco.api_path', 'api/v1'))
             ->namespace($this->namespace)
             ->group(base_path('routes/api.auth.uptime_test.php'));
 
-
-        // Uptime Test endpoints
+        // Users endpoints
         Route::prefix(config('haakco.api_path', 'api/v1'))
             ->namespace($this->namespace)
-            ->group(base_path('routes/api.admin.auth.user.php'));
+            ->group(base_path('routes/api.auth.user.php'));
+
+        // These routes should never be hit. Used to work around laravel
+        Route::prefix('/')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/api.fake.php'));
+
+        Route::prefix(config('haakco.api_path', 'api/v1'))
+            ->namespace($this->namespace)
+            ->group(base_path('routes/api.file.php'));
+
+        Route::prefix(config('haakco.api_path', 'api/v1'))
+            ->namespace($this->namespace)
+            ->group(base_path('routes/api.php'));
     }
 }
