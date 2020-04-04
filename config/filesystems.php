@@ -68,10 +68,12 @@ return [
             'bucket' => env('AWS_BUCKET'),
             'url' => env('AWS_URL'),
             'cache' => [
-                'driver' => 'adapter',
-                'disk'   => 'local-cache',
-                'file'   => 'flysystem.cache',
-                'expire' => 300,
+                'store' => 'file',
+//                'driver' => 'adapter',
+//                'disk'   => 'local-cache',
+//                'file'   => 'flysystem.cache',
+                'expire' => env('FILESYSTEM_CLOUD_CACHE_TIME_S3', env('FILESYSTEM_CLOUD_CACHE_TIME', 3600)),
+                'prefix' => 'cache-s3',
             ],
         ],
 
@@ -85,6 +87,14 @@ return [
             'use_path_style_endpoint' => env('MINIO_USE_PATH_STYLE_ENDPOINT', true),
             'endpoint' => env('MINIO_ENDPOINT', 'http://127.0.0.1:9005'),
             'bucket_endpoint' => false,
+            'cache' => [
+                'store' => 'file',
+//                'driver' => 'adapter',
+//                'disk'   => 'local-cache',
+//                'file'   => 'flysystem.cache',
+                'expire' => env('FILESYSTEM_CLOUD_CACHE_TIME_MINIO', env('FILESYSTEM_CLOUD_CACHE_TIME', 3600)),
+                'prefix' => 'cache-minio',
+            ],
         ],
 
         'google' => [
@@ -95,6 +105,14 @@ return [
             'refreshToken' => env('GOOGLE_DRIVE_REFRESH_TOKEN'),
             'folderId' => env('GOOGLE_DRIVE_FOLDER_ID'),
             'teamDriveId' => env('GOOGLE_DRIVE_TEAM_DRIVE_ID'),
+            'cache' => [
+                'store' => 'file',
+//                'driver' => 'adapter',
+//                'disk'   => 'local-cache',
+//                'file'   => 'flysystem.cache',
+                'expire' => env('FILESYSTEM_CLOUD_CACHE_TIME_GOOGLE', env('FILESYSTEM_CLOUD_CACHE_TIME', 3600)),
+                'prefix' => 'cache-gdrive',
+            ],
         ],
 
     ],
