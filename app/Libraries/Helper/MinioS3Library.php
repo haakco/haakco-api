@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Libraries\Helper;
-
 
 use Aws\Exception\AwsException;
 use Aws\S3\S3Client;
@@ -71,17 +69,17 @@ class MinioS3Library
         return $result['@metadata']['statusCode'] === 200;
     }
 
-    public function createDefaultBuckets() {
+    public function createDefaultBuckets()
+    {
         $currentBuckets = $this->getListOfBuckets();
         if (!array_key_exists(config('filesystems.disks.minio.bucket'), $currentBuckets)) {
             $this->createBucket(config('filesystems.disks.minio.bucket'));
         } else {
             Log::error('Bucket already exists. Cowardly failing to create a new one');
-            if(App::runningInConsole()) {
+            if (App::runningInConsole()) {
                 $output = new ConsoleOutput();
                 $output->writeln('Bucket already exists. Cowardly failing to create a new one');
             }
         }
-
     }
 }

@@ -16,8 +16,9 @@ class FileController extends Controller
         if (!$file->is_private) {
             response();
             return Storage::disk(config('filesystems.cloud'))
-                ->response($file->name)
-                ->setTtl(3600);
+                ->response($file->name, basename($file->name))
+                ->setEtag($file->uuid)
+                ->setSharedMaxAge(3600);
         }
         abort(400, 'File does not exist!');
     }
@@ -34,7 +35,8 @@ class FileController extends Controller
 
             return Storage::disk(config('filesystems.cloud'))
                 ->response($file->name)
-                ->setTtl(3600);
+                ->setEtag($file->uuid)
+                ->setSharedMaxAge(3600);
         }
         abort('File does not exist!');
     }
