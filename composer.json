@@ -7,20 +7,7 @@
     "laravel"
   ],
   "license": "MIT",
-  "repositories": [
-    {
-      "type": "package",
-      "package": {
-        "name": "fedeisas/laravel-mail-css-inliner",
-        "version": "2.3.1",
-        "source": {
-          "url": "https://github.com/haakco/laravel-mail-css-inliner.git",
-          "type": "git",
-          "reference": "master"
-        }
-      }
-    }
-  ],
+  "repositories": [],
   "require": {
     "php": "^7.2",
     "ext-imagick": "*",
