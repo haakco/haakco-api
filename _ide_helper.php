@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 7.4.0 on 2020-04-06 10:07:51.
+ * Generated for Laravel 7.5.2 on 2020-04-10 12:19:03.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -21129,7 +21129,13 @@ if (! function_exists('data_get')) {
 
         $key = is_array($key) ? $key : explode('.', $key);
 
-        while (! is_null($segment = array_shift($key))) {
+        foreach ($key as $i => $segment) {
+            unset($key[$i]);
+
+            if (is_null($segment)) {
+                return $target;
+            }
+
             if ($segment === '*') {
                 if ($target instanceof Collection) {
                     $target = $target->all();

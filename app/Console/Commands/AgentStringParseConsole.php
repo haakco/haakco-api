@@ -10,13 +10,11 @@ class AgentStringParseConsole extends Command
 {
     /**
      * The name and signature of the console command.
-     *
      * @var string
      */
     protected $signature = 'agent:update {--minutesBack=15}';
     /**
      * The console command description.
-     *
      * @var string
      */
     protected $description = 'Parses agent string to extract data';
