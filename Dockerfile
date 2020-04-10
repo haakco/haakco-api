@@ -2,10 +2,10 @@ FROM haakco/haakco-api-dev
 
 USER web
 
-ADD --chown=web:web . /site/web
-
 ## Cleanout previous dev just in case
 RUN rm -rf /site/web/*
+
+ADD --chown=web:web . /site/web
 
 WORKDIR /site/web
 
@@ -23,5 +23,3 @@ HEALTHCHECK \
   --retries=10 \
   --start-period=60s \
   CMD if [[ "$(curl -f http://127.0.0.1/api/v1/test/basic_system | jq -e . >/dev/null 2>&1)" != "0" ]]; then exit 1; else exit 0; fi
-
-
