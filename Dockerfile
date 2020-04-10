@@ -4,6 +4,9 @@ USER web
 
 ADD --chown=web:web . /site/web
 
+## Cleanout previous dev just in case
+RUN rm -rf /site/web/*
+
 WORKDIR /site/web
 
 RUN composer install --no-ansi --no-suggest --no-scripts --prefer-dist --no-progress --no-interaction \
