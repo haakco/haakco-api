@@ -12,7 +12,7 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Log;
 
-class UserNotifyEvent implements ShouldBroadcast
+class UserAlertEvent implements ShouldBroadcast
 {
     use Dispatchable;
     use InteractsWithSockets;
