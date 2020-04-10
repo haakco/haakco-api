@@ -34,10 +34,12 @@ class NotifyUserCommand extends Command
         event(new UserAlertEvent($adminUser, 'Test message'));
         event(
             new UserSendActionEvent(
-                $adminUser, '[Alert] Add Alert', [
+                $adminUser,
+                '[Alert] Add Alert',
+                [
                 'alertType' => 'info',
                 'message' => 'Test generic action',
-            ]
+                ]
             )
         );
     }
