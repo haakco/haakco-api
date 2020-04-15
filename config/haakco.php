@@ -15,6 +15,7 @@ return [
     ],
 
     'api_path' => 'api/v1',
+    'registration_enabled' => env('HAAK_REGISTRATION_ENABLED', true),
 
     'cache_short_seconds' => env('CACHE_SHORT_SECONDS', '300'),
     'access_token_lifetime_days' => env('ACCESS_TOKEN_LIFETIME_DAYS', 15),

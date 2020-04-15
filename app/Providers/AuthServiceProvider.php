@@ -39,6 +39,7 @@ class AuthServiceProvider extends ServiceProvider
                 now()->addDays(config('haakco.personal_access_token_lifetime_days', 200))
             );
         });
+        Passport::personalAccessClientId(1);
         Passport::enableImplicitGrant();
         Passport::useTokenModel(BaseOauthAccessToken::class);
         Passport::useClientModel(BaseOauthClient::class);

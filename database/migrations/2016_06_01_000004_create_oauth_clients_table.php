@@ -19,7 +19,7 @@ class CreateOauthClientsTable extends Migration
             $table->timestampTz('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestampTz('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->text('name');
-            $table->text('secret', 100)->nullable();
+            $table->text('secret')->nullable();
             $table->text('redirect');
             $table->boolean('personal_access_client');
             $table->boolean('password_client');
