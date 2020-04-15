@@ -22,24 +22,27 @@ class UserController extends Controller
         $request->validate(
             [
                 'name' => 'required',
+                'username' => 'required|string|min:6|regex:/^[a-zA-Z0-9_]{6,}$/|unique:App\Models\User,username',
                 'email' => 'required|email|unique:App\Models\User,email',
                 'password' => 'required|min:8',
             ]
         );
 
+        if (!config('haakco.registration_enabled')) {
+            abort(400, 'Registration is currently not open');
+        }
 
-        $input = $request->all();
-        $input['password'] = bcrypt($input['password']);
         $user = User::create(
             [
                 'name' => $request->get('name'),
+                'username' => $request->get('username'),
                 'email' => $request->get('email'),
-                'password' => bcrypt($input['password']),
+                'password' => bcrypt($request->get('password')),
             ]
         );
         $user->refresh();
         $success = [
-            'access_token' => $user->createToken(config('app.name'))->accessToken,
+//            'access_token' => $user->createToken(config('app.name'))->accessToken,
             'name' => $user->name,
             'uuid' => $user->uuid,
         ];
