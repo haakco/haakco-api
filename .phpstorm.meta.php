@@ -5,7 +5,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2020-04-15 13:41:02.
+    * Generated on 2020-04-16 09:30:49.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -37,6 +37,7 @@ namespace PHPSTORM_META {
         'Illuminate\Contracts\Routing\ResponseFactory' => \Illuminate\Routing\ResponseFactory::class,
         'Illuminate\Database\Eloquent\Factory' => \Illuminate\Database\Eloquent\Factory::class,
         'Illuminate\Foundation\Mix' => \Illuminate\Foundation\Mix::class,
+        'Illuminate\Foundation\PackageManifest' => \Illuminate\Foundation\PackageManifest::class,
         'Illuminate\Mail\Markdown' => \Illuminate\Mail\Markdown::class,
         'Illuminate\Notifications\ChannelManager' => \Illuminate\Notifications\ChannelManager::class,
         'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
@@ -249,6 +250,7 @@ namespace PHPSTORM_META {
         'Illuminate\Contracts\Routing\ResponseFactory' => \Illuminate\Routing\ResponseFactory::class,
         'Illuminate\Database\Eloquent\Factory' => \Illuminate\Database\Eloquent\Factory::class,
         'Illuminate\Foundation\Mix' => \Illuminate\Foundation\Mix::class,
+        'Illuminate\Foundation\PackageManifest' => \Illuminate\Foundation\PackageManifest::class,
         'Illuminate\Mail\Markdown' => \Illuminate\Mail\Markdown::class,
         'Illuminate\Notifications\ChannelManager' => \Illuminate\Notifications\ChannelManager::class,
         'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
@@ -461,6 +463,7 @@ namespace PHPSTORM_META {
         'Illuminate\Contracts\Routing\ResponseFactory' => \Illuminate\Routing\ResponseFactory::class,
         'Illuminate\Database\Eloquent\Factory' => \Illuminate\Database\Eloquent\Factory::class,
         'Illuminate\Foundation\Mix' => \Illuminate\Foundation\Mix::class,
+        'Illuminate\Foundation\PackageManifest' => \Illuminate\Foundation\PackageManifest::class,
         'Illuminate\Mail\Markdown' => \Illuminate\Mail\Markdown::class,
         'Illuminate\Notifications\ChannelManager' => \Illuminate\Notifications\ChannelManager::class,
         'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
@@ -673,6 +676,7 @@ namespace PHPSTORM_META {
         'Illuminate\Contracts\Routing\ResponseFactory' => \Illuminate\Routing\ResponseFactory::class,
         'Illuminate\Database\Eloquent\Factory' => \Illuminate\Database\Eloquent\Factory::class,
         'Illuminate\Foundation\Mix' => \Illuminate\Foundation\Mix::class,
+        'Illuminate\Foundation\PackageManifest' => \Illuminate\Foundation\PackageManifest::class,
         'Illuminate\Mail\Markdown' => \Illuminate\Mail\Markdown::class,
         'Illuminate\Notifications\ChannelManager' => \Illuminate\Notifications\ChannelManager::class,
         'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
@@ -885,6 +889,7 @@ namespace PHPSTORM_META {
         'Illuminate\Contracts\Routing\ResponseFactory' => \Illuminate\Routing\ResponseFactory::class,
         'Illuminate\Database\Eloquent\Factory' => \Illuminate\Database\Eloquent\Factory::class,
         'Illuminate\Foundation\Mix' => \Illuminate\Foundation\Mix::class,
+        'Illuminate\Foundation\PackageManifest' => \Illuminate\Foundation\PackageManifest::class,
         'Illuminate\Mail\Markdown' => \Illuminate\Mail\Markdown::class,
         'Illuminate\Notifications\ChannelManager' => \Illuminate\Notifications\ChannelManager::class,
         'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
@@ -1097,6 +1102,7 @@ namespace PHPSTORM_META {
         'Illuminate\Contracts\Routing\ResponseFactory' => \Illuminate\Routing\ResponseFactory::class,
         'Illuminate\Database\Eloquent\Factory' => \Illuminate\Database\Eloquent\Factory::class,
         'Illuminate\Foundation\Mix' => \Illuminate\Foundation\Mix::class,
+        'Illuminate\Foundation\PackageManifest' => \Illuminate\Foundation\PackageManifest::class,
         'Illuminate\Mail\Markdown' => \Illuminate\Mail\Markdown::class,
         'Illuminate\Notifications\ChannelManager' => \Illuminate\Notifications\ChannelManager::class,
         'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
@@ -1309,6 +1315,7 @@ namespace PHPSTORM_META {
         'Illuminate\Contracts\Routing\ResponseFactory' => \Illuminate\Routing\ResponseFactory::class,
         'Illuminate\Database\Eloquent\Factory' => \Illuminate\Database\Eloquent\Factory::class,
         'Illuminate\Foundation\Mix' => \Illuminate\Foundation\Mix::class,
+        'Illuminate\Foundation\PackageManifest' => \Illuminate\Foundation\PackageManifest::class,
         'Illuminate\Mail\Markdown' => \Illuminate\Mail\Markdown::class,
         'Illuminate\Notifications\ChannelManager' => \Illuminate\Notifications\ChannelManager::class,
         'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
@@ -1521,6 +1528,7 @@ namespace PHPSTORM_META {
         'Illuminate\Contracts\Routing\ResponseFactory' => \Illuminate\Routing\ResponseFactory::class,
         'Illuminate\Database\Eloquent\Factory' => \Illuminate\Database\Eloquent\Factory::class,
         'Illuminate\Foundation\Mix' => \Illuminate\Foundation\Mix::class,
+        'Illuminate\Foundation\PackageManifest' => \Illuminate\Foundation\PackageManifest::class,
         'Illuminate\Mail\Markdown' => \Illuminate\Mail\Markdown::class,
         'Illuminate\Notifications\ChannelManager' => \Illuminate\Notifications\ChannelManager::class,
         'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,

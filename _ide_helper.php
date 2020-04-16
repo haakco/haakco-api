@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 7.5.2 on 2020-04-15 13:41:00.
+ * Generated for Laravel 7.6.2 on 2020-04-16 09:30:48.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -4368,6 +4368,20 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+         * Bind values to their parameters in the given statement.
+         *
+         * @param \PDOStatement $statement
+         * @param array $bindings
+         * @return void 
+         * @static 
+         */ 
+        public static function bindValues($statement, $bindings)
+        {
+                        /** @var \Illuminate\Database\PostgresConnection $instance */
+                        $instance->bindValues($statement, $bindings);
+        }
+        
+        /**
          * Get a schema builder instance for the connection.
          *
          * @return \Illuminate\Database\Schema\PostgresBuilder 
@@ -4610,21 +4624,6 @@ namespace Illuminate\Support\Facades {
             //Method inherited from \Illuminate\Database\Connection            
                         /** @var \Illuminate\Database\PostgresConnection $instance */
                         return $instance->pretend($callback);
-        }
-        
-        /**
-         * Bind values to their parameters in the given statement.
-         *
-         * @param \PDOStatement $statement
-         * @param array $bindings
-         * @return void 
-         * @static 
-         */ 
-        public static function bindValues($statement, $bindings)
-        {
-            //Method inherited from \Illuminate\Database\Connection            
-                        /** @var \Illuminate\Database\PostgresConnection $instance */
-                        $instance->bindValues($statement, $bindings);
         }
         
         /**
@@ -20207,7 +20206,7 @@ namespace  {
             /**
              * Add an "order by" clause to the query.
              *
-             * @param \Closure|\Illuminate\Database\Query\Builder|string $column
+             * @param \Closure|\Illuminate\Database\Query\Builder|\Illuminate\Database\Query\Expression|string $column
              * @param string $direction
              * @return \Illuminate\Database\Query\Builder 
              * @throws \InvalidArgumentException
