@@ -150,16 +150,46 @@ class UserController extends Controller
      * @return JsonResponse
      * @throws Exception
      */
+    public function getCompanies(User $user): JsonResponse
+    {
+
+
+        /** @var User $currentUser */
+        $currentUser = Auth::user();
+
+        UserPermission::testIfUserHasAnyPermission(
+            [
+                RightsEnum::SYSTEM_PERMISSION_USERS_VIEW,
+            ]
+        );
+
+        $companies = $currentUser
+            ->companies
+            ->reduce(
+                function ($companies, Company $company) {
+                    $companies[$company->uuid] = [
+                        'uuid' => $company->uuid,
+                        'created_at' => $company->created_at,
+                        'updated_at' => $company->updated_at,
+                        'is_system' => $company->is_system,
+                        'name' => $company->name,
+                        'slug' => $company->slug,
+                    ];
+                    return $companies;
+                },
+                []
+            );
+        return response()->json($companies);
+    }
+
+    /**
+     * @return JsonResponse
+     * @throws Exception
+     */
     public function getMyPermissions(): JsonResponse
     {
         /** @var User $currentUser */
         $currentUser = Auth::user();
-        UserPermission::testIfUserHasAnyPermission(
-            [
-                RightsEnum::SYSTEM_PERMISSION_USERS_VIEW,
-            ],
-            $currentUser
-        );
         return response()->json(
             $currentUser->getPermissionsViaRoles()->pluck('name', 'uuid')
         );
@@ -180,6 +210,37 @@ class UserController extends Controller
         );
         return response()->json(
             $user->getPermissionsViaRoles()->pluck('name', 'uuid')
+        );
+    }
+
+    /**
+     * @return JsonResponse
+     * @throws Exception
+     */
+    public function getMyRoles(): JsonResponse
+    {
+        /** @var User $currentUser */
+        $currentUser = Auth::user();
+        return response()->json(
+            $currentUser->roles()->pluck('name', 'uuid')
+        );
+    }
+
+    /**
+     * @param \App\Models\User $user
+     *
+     * @return JsonResponse
+     * @throws Exception
+     */
+    public function getRoles(User $user): JsonResponse
+    {
+        UserPermission::testIfUserHasAnyPermission(
+            [
+                RightsEnum::SYSTEM_PERMISSION_USERS_VIEW,
+            ]
+        );
+        return response()->json(
+            $user->roles()->pluck('name', 'uuid')
         );
     }
 

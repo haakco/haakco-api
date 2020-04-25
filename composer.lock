@@ -118,16 +118,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.134.8",
+            "version": "3.135.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "8a9b598a0ede2165be5988899dcebead6fcc4d41"
+                "reference": "fb6f4a12d9ad1b8fc1481aef61ed1f8a9fe2164b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/8a9b598a0ede2165be5988899dcebead6fcc4d41",
-                "reference": "8a9b598a0ede2165be5988899dcebead6fcc4d41",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/fb6f4a12d9ad1b8fc1481aef61ed1f8a9fe2164b",
+                "reference": "fb6f4a12d9ad1b8fc1481aef61ed1f8a9fe2164b",
                 "shasum": ""
             },
             "require": {
@@ -198,7 +198,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-04-17T18:11:57+00:00"
+            "time": "2020-04-24T18:14:04+00:00"
         },
         {
             "name": "aws/aws-sdk-php-laravel",
@@ -271,16 +271,16 @@
         },
         {
             "name": "barryvdh/laravel-ide-helper",
-            "version": "v2.6.7",
+            "version": "v2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-ide-helper.git",
-                "reference": "edd69c5e0508972c81f1f7173236de2459c45814"
+                "reference": "5f677edc14bdcfdcac36633e6eea71b2728a4dbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/edd69c5e0508972c81f1f7173236de2459c45814",
-                "reference": "edd69c5e0508972c81f1f7173236de2459c45814",
+                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/5f677edc14bdcfdcac36633e6eea71b2728a4dbc",
+                "reference": "5f677edc14bdcfdcac36633e6eea71b2728a4dbc",
                 "shasum": ""
             },
             "require": {
@@ -296,7 +296,7 @@
                 "illuminate/config": "^5.5|^6|^7",
                 "illuminate/view": "^5.5|^6|^7",
                 "mockery/mockery": "^1.3",
-                "orchestra/testbench": "^3|^4",
+                "orchestra/testbench": "^3|^4|^5",
                 "phpro/grumphp": "^0.17.1",
                 "squizlabs/php_codesniffer": "^3"
             },
@@ -338,7 +338,13 @@
                 "phpstorm",
                 "sublime"
             ],
-            "time": "2020-02-25T20:41:32+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/barryvdh",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-04-22T09:57:26+00:00"
         },
         {
             "name": "barryvdh/laravel-translation-manager",
@@ -492,16 +498,16 @@
         },
         {
             "name": "cakephp/chronos",
-            "version": "2.0.3",
+            "version": "2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/chronos.git",
-                "reference": "0b176c8e8abb18b552b789f60250188a74d534ab"
+                "reference": "7e77b7d43e23b78363b6a1dc592de1c3d557347b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/chronos/zipball/0b176c8e8abb18b552b789f60250188a74d534ab",
-                "reference": "0b176c8e8abb18b552b789f60250188a74d534ab",
+                "url": "https://api.github.com/repos/cakephp/chronos/zipball/7e77b7d43e23b78363b6a1dc592de1c3d557347b",
+                "reference": "7e77b7d43e23b78363b6a1dc592de1c3d557347b",
                 "shasum": ""
             },
             "require": {
@@ -543,7 +549,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2020-02-26T20:24:12+00:00"
+            "time": "2020-04-21T14:14:05+00:00"
         },
         {
             "name": "chojnicki/video-platforms-parser",
@@ -1102,16 +1108,16 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "v2.10.1",
+            "version": "2.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "c2b8e6e82732a64ecde1cddf9e1e06cb8556e3d8"
+                "reference": "aab745e7b6b2de3b47019da81e7225e14dcfdac8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/c2b8e6e82732a64ecde1cddf9e1e06cb8556e3d8",
-                "reference": "c2b8e6e82732a64ecde1cddf9e1e06cb8556e3d8",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/aab745e7b6b2de3b47019da81e7225e14dcfdac8",
+                "reference": "aab745e7b6b2de3b47019da81e7225e14dcfdac8",
                 "shasum": ""
             },
             "require": {
@@ -1123,9 +1129,11 @@
             "require-dev": {
                 "doctrine/coding-standard": "^6.0",
                 "jetbrains/phpstorm-stubs": "^2019.1",
-                "phpstan/phpstan": "^0.11.3",
+                "nikic/php-parser": "^4.4",
+                "phpstan/phpstan": "^0.12",
                 "phpunit/phpunit": "^8.4.1",
-                "symfony/console": "^2.0.5|^3.0|^4.0|^5.0"
+                "symfony/console": "^2.0.5|^3.0|^4.0|^5.0",
+                "vimeo/psalm": "^3.11"
             },
             "suggest": {
                 "symfony/console": "For helpful console commands such as SQL execution and import of files."
@@ -1190,7 +1198,21 @@
                 "sqlserver",
                 "sqlsrv"
             ],
-            "time": "2020-01-04T12:56:21+00:00"
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Fdbal",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-04-20T17:19:26+00:00"
         },
         {
             "name": "doctrine/event-manager",
@@ -1840,16 +1862,16 @@
         },
         {
             "name": "giggsey/libphonenumber-for-php",
-            "version": "8.12.1",
+            "version": "8.12.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giggsey/libphonenumber-for-php.git",
-                "reference": "198dffa12831e17320207ce1bd3b121402d2cc8d"
+                "reference": "030682bc4fcdc0c6fb85b68aec2ffeff6978768a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/198dffa12831e17320207ce1bd3b121402d2cc8d",
-                "reference": "198dffa12831e17320207ce1bd3b121402d2cc8d",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/030682bc4fcdc0c6fb85b68aec2ffeff6978768a",
+                "reference": "030682bc4fcdc0c6fb85b68aec2ffeff6978768a",
                 "shasum": ""
             },
             "require": {
@@ -1904,7 +1926,7 @@
                 "phonenumber",
                 "validation"
             ],
-            "time": "2020-03-30T08:29:12+00:00"
+            "time": "2020-04-22T19:37:04+00:00"
         },
         {
             "name": "giggsey/locale",
@@ -2107,16 +2129,16 @@
         },
         {
             "name": "graylog2/gelf-php",
-            "version": "1.6.4",
+            "version": "1.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bzikarsky/gelf-php.git",
-                "reference": "4502a39fc602d4037ae954bc9b1fa63acb10c3e1"
+                "reference": "14b87aa31880b9f2da6de053674ea1e12d4a174b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bzikarsky/gelf-php/zipball/4502a39fc602d4037ae954bc9b1fa63acb10c3e1",
-                "reference": "4502a39fc602d4037ae954bc9b1fa63acb10c3e1",
+                "url": "https://api.github.com/repos/bzikarsky/gelf-php/zipball/14b87aa31880b9f2da6de053674ea1e12d4a174b",
+                "reference": "14b87aa31880b9f2da6de053674ea1e12d4a174b",
                 "shasum": ""
             },
             "require": {
@@ -2157,7 +2179,7 @@
                 }
             ],
             "description": "A php implementation to send log-messages to a GELF compatible backend like Graylog2.",
-            "time": "2020-02-06T19:51:02+00:00"
+            "time": "2020-04-24T05:38:21+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2877,16 +2899,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v7.6.2",
+            "version": "v7.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "695be25d84b5cedd0026c428d4e9697fe8cd06f9"
+                "reference": "cdc6d7e6c744f4d8f7d61102aea9b111550cd297"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/695be25d84b5cedd0026c428d4e9697fe8cd06f9",
-                "reference": "695be25d84b5cedd0026c428d4e9697fe8cd06f9",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/cdc6d7e6c744f4d8f7d61102aea9b111550cd297",
+                "reference": "cdc6d7e6c744f4d8f7d61102aea9b111550cd297",
                 "shasum": ""
             },
             "require": {
@@ -2990,6 +3012,7 @@
                 "psr/http-message": "Required to allow Storage::put to accept a StreamInterface (^1.0).",
                 "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (^4.0).",
                 "symfony/cache": "Required to PSR-6 cache bridge (^5.0).",
+                "symfony/filesystem": "Required to create relative storage directory symbolic links (^5.0).",
                 "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^2.0).",
                 "wildbit/swiftmailer-postmark": "Required to use Postmark mail driver (^3.0)."
             },
@@ -3024,7 +3047,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-04-15T20:57:47+00:00"
+            "time": "2020-04-24T17:21:56+00:00"
         },
         {
             "name": "laravel/helpers",
@@ -3081,16 +3104,16 @@
         },
         {
             "name": "laravel/horizon",
-            "version": "v4.3.0",
+            "version": "v4.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "fda753c79ddef7ee4f16fb34cd3fc3fd64d4f114"
+                "reference": "03feeb6379b26371575400c4a3fd659b094ee4c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/fda753c79ddef7ee4f16fb34cd3fc3fd64d4f114",
-                "reference": "fda753c79ddef7ee4f16fb34cd3fc3fd64d4f114",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/03feeb6379b26371575400c4a3fd659b094ee4c6",
+                "reference": "03feeb6379b26371575400c4a3fd659b094ee4c6",
                 "shasum": ""
             },
             "require": {
@@ -3150,20 +3173,20 @@
                 "laravel",
                 "queue"
             ],
-            "time": "2020-04-14T15:42:35+00:00"
+            "time": "2020-04-21T12:54:49+00:00"
         },
         {
             "name": "laravel/passport",
-            "version": "v8.4.3",
+            "version": "v8.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/passport.git",
-                "reference": "edb9ccb9993ca98c7347da2fae20e1b8b4895f31"
+                "reference": "dd4b1d96eb1fe556a6eb2c55c942360364aa02c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/passport/zipball/edb9ccb9993ca98c7347da2fae20e1b8b4895f31",
-                "reference": "edb9ccb9993ca98c7347da2fae20e1b8b4895f31",
+                "url": "https://api.github.com/repos/laravel/passport/zipball/dd4b1d96eb1fe556a6eb2c55c942360364aa02c1",
+                "reference": "dd4b1d96eb1fe556a6eb2c55c942360364aa02c1",
                 "shasum": ""
             },
             "require": {
@@ -3223,7 +3246,7 @@
                 "oauth",
                 "passport"
             ],
-            "time": "2020-03-31T15:48:43+00:00"
+            "time": "2020-04-21T19:24:59+00:00"
         },
         {
             "name": "laravel/slack-notification-channel",
@@ -3284,16 +3307,16 @@
         },
         {
             "name": "laravel/telescope",
-            "version": "v3.2.1",
+            "version": "v3.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/telescope.git",
-                "reference": "63c4d7ff3ff19c6fa222df73117faedbb72f776d"
+                "reference": "419b288555ca7821f6448aab6d1db9dd3a370af5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/63c4d7ff3ff19c6fa222df73117faedbb72f776d",
-                "reference": "63c4d7ff3ff19c6fa222df73117faedbb72f776d",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/419b288555ca7821f6448aab6d1db9dd3a370af5",
+                "reference": "419b288555ca7821f6448aab6d1db9dd3a370af5",
                 "shasum": ""
             },
             "require": {
@@ -3343,7 +3366,7 @@
                 "laravel",
                 "monitoring"
             ],
-            "time": "2020-04-14T15:36:29+00:00"
+            "time": "2020-04-21T19:37:10+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -3466,16 +3489,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "1.4.0",
+            "version": "1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "517cbe1c6faf90afeb38a0e917c73acc6d3051ce"
+                "reference": "9e780d972185e4f737a03bade0fd34a9e67bbf31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/517cbe1c6faf90afeb38a0e917c73acc6d3051ce",
-                "reference": "517cbe1c6faf90afeb38a0e917c73acc6d3051ce",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/9e780d972185e4f737a03bade0fd34a9e67bbf31",
+                "reference": "9e780d972185e4f737a03bade0fd34a9e67bbf31",
                 "shasum": ""
             },
             "require": {
@@ -3536,7 +3559,33 @@
                 "md",
                 "parser"
             ],
-            "time": "2020-04-18T20:46:13+00:00"
+            "funding": [
+                {
+                    "url": "https://enjoy.gitstore.app/repositories/thephpleague/commonmark",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.colinodell.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.paypal.me/colinpodell/10.00",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/colinodell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/colinodell",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/league/commonmark",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-04-24T13:39:56+00:00"
         },
         {
             "name": "league/csv",
@@ -6638,16 +6687,16 @@
         },
         {
             "name": "spatie/laravel-responsecache",
-            "version": "6.6.0",
+            "version": "6.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-responsecache.git",
-                "reference": "f9f9af7cd6874d478429fad7a8ba940f00f0e318"
+                "reference": "1457280e98b5e9d4d6d993982912da6540f30b46"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-responsecache/zipball/f9f9af7cd6874d478429fad7a8ba940f00f0e318",
-                "reference": "f9f9af7cd6874d478429fad7a8ba940f00f0e318",
+                "url": "https://api.github.com/repos/spatie/laravel-responsecache/zipball/1457280e98b5e9d4d6d993982912da6540f30b46",
+                "reference": "1457280e98b5e9d4d6d993982912da6540f30b46",
                 "shasum": ""
             },
             "require": {
@@ -6704,7 +6753,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2020-03-02T19:31:25+00:00"
+            "time": "2020-04-22T10:11:07+00:00"
         },
         {
             "name": "spatie/laravel-tags",
@@ -10738,16 +10787,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "8.5.3",
+            "version": "8.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "67750516bc02f300e2742fed2f50177f8f37bedf"
+                "reference": "8474e22d7d642f665084ba5ec780626cbd1efd23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/67750516bc02f300e2742fed2f50177f8f37bedf",
-                "reference": "67750516bc02f300e2742fed2f50177f8f37bedf",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/8474e22d7d642f665084ba5ec780626cbd1efd23",
+                "reference": "8474e22d7d642f665084ba5ec780626cbd1efd23",
                 "shasum": ""
             },
             "require": {
@@ -10817,7 +10866,17 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2020-03-31T08:52:04+00:00"
+            "funding": [
+                {
+                    "url": "https://phpunit.de/donate.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/sebastianbergmann",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-04-23T04:39:42+00:00"
         },
         {
             "name": "roave/security-advisories",
@@ -10825,12 +10884,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "09afa996c68c18f49e6487b06adcb2ef27da61fa"
+                "reference": "81541a731da2f245a08666de73169cb5da7ac573"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/09afa996c68c18f49e6487b06adcb2ef27da61fa",
-                "reference": "09afa996c68c18f49e6487b06adcb2ef27da61fa",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/81541a731da2f245a08666de73169cb5da7ac573",
+                "reference": "81541a731da2f245a08666de73169cb5da7ac573",
                 "shasum": ""
             },
             "conflict": {
@@ -10876,6 +10935,8 @@
                 "endroid/qr-code-bundle": "<3.4.2",
                 "enshrined/svg-sanitize": "<0.13.1",
                 "erusev/parsedown": "<1.7.2",
+                "ezsystems/demobundle": ">=5.4,<5.4.6.1",
+                "ezsystems/ezdemo-ls-extension": ">=5.4,<5.4.2.1",
                 "ezsystems/ezfind-ls": ">=5.3,<5.3.6.1|>=5.4,<5.4.11.1|>=2017.12,<2017.12.0.1",
                 "ezsystems/ezplatform": ">=1.7,<1.7.9.1|>=1.13,<1.13.5.1|>=2.5,<2.5.4",
                 "ezsystems/ezplatform-admin-ui": ">=1.3,<1.3.5|>=1.4,<1.4.6",
@@ -10964,7 +11025,7 @@
                 "silverstripe/userforms": "<3",
                 "simple-updates/phpwhois": "<=1",
                 "simplesamlphp/saml2": "<1.10.6|>=2,<2.3.8|>=3,<3.1.4",
-                "simplesamlphp/simplesamlphp": "<1.18.4",
+                "simplesamlphp/simplesamlphp": "<1.18.6",
                 "simplesamlphp/simplesamlphp-module-infocard": "<1.0.1",
                 "simplito/elliptic-php": "<1.0.6",
                 "slim/slim": "<2.6",
@@ -11081,7 +11142,17 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2020-04-15T04:56:51+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/Ocramius",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/roave/security-advisories",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-04-23T00:01:30+00:00"
         },
         {
             "name": "scrivo/highlight.php",
