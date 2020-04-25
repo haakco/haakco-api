@@ -72,7 +72,7 @@ class UserLibrary
         return $user->getPermissionsViaRoles()
             ->sortBy('name')
             ->unique()
-            ->pluck('name')
+            ->pluck('name', 'uuid')
             ->toArray();
     }
 
@@ -86,7 +86,7 @@ class UserLibrary
         return $user->roles
             ->sortBy('name')
             ->unique()
-            ->pluck('name')
+            ->pluck('name', 'uuid')
             ->toArray();
     }
 
