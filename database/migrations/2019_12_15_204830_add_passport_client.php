@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
+use Laravel\Passport\Console\HashCommand;
 
 class AddPassportClient extends Migration
 {
@@ -26,6 +27,8 @@ class AddPassportClient extends Migration
         \App\Libraries\Helper\DatabaseLibrary::updateSequenceAfterInsert(
             'public.oauth_clients'
         );
+
+//        Artisan::call(HashCommand::class);
     }
 
     /**
