@@ -1,5 +1,6 @@
 <?php
 
+use App\Libraries\Helper\DatabaseLibrary;
 use Illuminate\Database\Migrations\Migration;
 use Laravel\Passport\Console\HashCommand;
 
@@ -7,33 +8,43 @@ class AddPassportClient extends Migration
 {
     /**
      * Run the migrations.
-     *
      * @return void
      */
     public function up()
     {
-        DB::insert("INSERT INTO
-    public.oauth_clients
-    (id, user_id, name, secret, redirect, personal_access_client, password_client, revoked)
-    VALUES
-           (1, null, 'HaakCo Password Grant Client', '3fj8GVtEohIX82OHk4DsrrdYbH10LYq3zd338bkU', 'http://localhost', false, true, false);");
-
-        DB::insert("INSERT INTO
-    public.oauth_clients
-    (id, user_id, name, secret, redirect, personal_access_client, password_client, revoked)
-    VALUES
-           (2, null, 'HaakCo Personal Access Client', 'kBNfMqUpebTupCjQRyPDUpOQ9T7R63oC8Yc3dcQy', 'http://localhost', true, false, false);");
-
-        \App\Libraries\Helper\DatabaseLibrary::updateSequenceAfterInsert(
-            'public.oauth_clients'
+        DB::insert(
+            "INSERT
+INTO
+    public.oauth_clients (id, user_id, created_at, updated_at, name, secret, provider, redirect, personal_access_client,
+                          password_client, revoked)
+VALUES
+(1, NULL, '2020-05-20 18:05:00', '2020-05-20 18:05:33', 'haakco Personal Access Client',
+ 'exQXR4RUlvQI5Tt0e1dDntotMN5Sp9qped6n8WsE', NULL, 'http://localhost', TRUE, FALSE, FALSE);"
         );
 
-//        Artisan::call(HashCommand::class);
+        DB::insert(
+            "INSERT
+INTO
+    public.oauth_clients (id, user_id, created_at, updated_at, name, secret, provider, redirect, personal_access_client,
+                          password_client, revoked)
+VALUES
+(2, NULL, '2020-05-20 18:05:00', '2020-05-20 18:05:33', 'haakco Password Grant Client',
+ 'fmEatZVcOEdpcRRkbjfNF7wCmOZlKUR89suhdFGx', 'users', 'http://localhost', FALSE, TRUE, FALSE);"
+        );
+
+        DatabaseLibrary::updateSequenceAfterInsert(
+            'public.oauth_clients'
+        );
+        Artisan::call(
+            HashCommand::class,
+            [
+                '--force' => true,
+            ]
+        );
     }
 
     /**
      * Reverse the migrations.
-     *
      * @return void
      */
     public function down()
