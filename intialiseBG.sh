@@ -25,7 +25,6 @@ fi
 ./artisan package:discover
 ./artisan route:clear
 ./artisan opcache:clear
-./artisan dashboard:cache:clear
 
 if [[ "${LV_DO_CACHING}" = "TRUE" ]]; then
   echo "LV_DO_CACHING ENABLED"

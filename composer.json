@@ -68,6 +68,7 @@
     "whichbrowser/parser": "^2.0"
   },
   "require-dev": {
+    "beyondcode/helo-laravel": "^1.0",
     "brainmaestro/composer-git-hooks": "^2.8",
     "doctrine/dbal": "^2.10",
     "facade/ignition": "^2.0",
