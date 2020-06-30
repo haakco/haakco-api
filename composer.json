@@ -182,9 +182,6 @@
     "migrate": [
       "php artisan migrate --step"
     ],
-    "insights": [
-      "php artisan insights"
-    ],
     "LaravelEnumGenerator": [
       "php artisan packager:get https://github.com/haakco/LaravelEnumGenerator",
       "php artisan packager:git https://github.com/haakco/LaravelEnumGenerator"
