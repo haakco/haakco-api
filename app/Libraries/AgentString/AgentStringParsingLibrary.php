@@ -4,6 +4,7 @@ namespace App\Libraries\AgentString;
 
 use App\Jobs\AgentStringParseJob;
 use App\Models\AgentString;
+use App\Models\AgentStringDevice;
 use App\Models\AgentStringDeviceBrowser;
 use App\Models\AgentStringDeviceBrowserEngine;
 use App\Models\AgentStringDeviceBrowserEngineType;
@@ -11,6 +12,8 @@ use App\Models\AgentStringDeviceBrowserType;
 use App\Models\AgentStringDeviceManufacturer;
 use App\Models\AgentStringDeviceManufacturerType;
 use App\Models\AgentStringDeviceModel;
+use App\Models\AgentStringDeviceModelType;
+use App\Models\AgentStringDeviceSub;
 use App\Models\AgentStringDeviceSubType;
 use App\Models\AgentStringDeviceSubWb;
 use App\Models\AgentStringDeviceSubWbType;
@@ -192,14 +195,14 @@ class AgentStringParsingLibrary
     private function setDeviceModel(AgentString $agentString, Parser $browserAgentInfo): void
     {
         if (isset($browserAgentInfo->device->model)) {
-            $deviceModel = AgentStringDeviceModel::query()
+            $deviceModel = AgentStringDeviceModelType::query()
                 ->where('name', $browserAgentInfo->device->model)
                 ->where('identifier', $browserAgentInfo->device->identifier ?? '')
                 ->where('version', $browserAgentInfo->device->series ?? 1)
                 ->first();
 
-            if (!($deviceModel instanceof AgentStringDeviceModel)) {
-                $deviceModel = AgentStringDeviceModel::create(
+            if (!($deviceModel instanceof AgentStringDeviceModelType)) {
+                $deviceModel = AgentStringDeviceModelType::create(
                     [
                         'name' => $browserAgentInfo->device->model,
                         'identifier' => $browserAgentInfo->device->identifier ?? '',
@@ -284,13 +287,13 @@ class AgentStringParsingLibrary
             isset($browserAgentInfo->device->type) &&
             $browserAgentInfo->device->type !== ''
         ) {
-            $deviceType = AgentStringDeviceSubType::firstOrCreate(
+            $deviceType = AgentStringDeviceType::firstOrCreate(
                 [
                     'name' => $browserAgentInfo->device->type,
                 ]
             );
 
-            $agentStringDeviceType = AgentStringDeviceType::query()
+            $agentStringDeviceType = AgentStringDevice::query()
                 ->where('agent_string_id', $agentString->id)
                 ->first();
 
@@ -300,7 +303,7 @@ class AgentStringParsingLibrary
                     $agentStringDeviceType->save();
                 }
             } else {
-                AgentStringDeviceType::create(
+                AgentStringDevice::create(
                     [
                         'agent_string_id' => $agentString->id,
                         'agent_string_device_type_id' => $deviceType->id,
@@ -334,17 +337,17 @@ class AgentStringParsingLibrary
             $deviceSubTypeId = AgentStringDeviceSubTypesEnum::PC_ID;
         }
 
-        $agentStringDeviceSubType = AgentStringDeviceSubType::query()
+        $agentStringDeviceSub = AgentStringDeviceSub::query()
             ->where('agent_string_id', $agentString->id)
             ->first();
 
-        if ($agentStringDeviceSubType) {
-            if ($agentStringDeviceSubType->agent_string_device_sub_type_id !== $deviceSubTypeId) {
-                $agentStringDeviceSubType->agent_string_device_sub_type_id = $deviceSubTypeId;
-                $agentStringDeviceSubType->save();
+        if ($agentStringDeviceSub) {
+            if ($agentStringDeviceSub->agent_string_device_sub_type_id !== $deviceSubTypeId) {
+                $agentStringDeviceSub->agent_string_device_sub_type_id = $deviceSubTypeId;
+                $agentStringDeviceSub->save();
             }
         } else {
-            AgentStringDeviceSubType::create(
+            AgentStringDeviceSub::create(
                 [
                     'agent_string_id' => $agentString->id,
                     'agent_string_device_sub_type_id' => $deviceSubTypeId,
