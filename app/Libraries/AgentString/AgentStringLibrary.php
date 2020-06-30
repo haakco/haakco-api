@@ -54,14 +54,15 @@ class AgentStringLibrary
                 $agentString = $this->getAgentString($agentStr);
                 $agentString->load(
                     [
-                        'deviceBrowsers',
-                        'deviceBrowserEngines',
-                        'deviceManufacturers',
-                        'deviceModels',
-                        'deviceSubTypes',
-                        'deviceSubWbTypes',
-                        'deviceTypes',
-                        'operatingSystems',
+                        'agent_string_device_browsers.agent_string_device_browser_type',
+                        'agent_string_device_browser_engines.agent_string_device_browser_engine_type',
+                        'agent_string_device_manufacturers.agent_string_device_manufacturer_type',
+                        'agent_string_device_models.agent_string_device_model_type',
+                        'agent_string_device_subs.agent_string_device_sub_type',
+                        'agent_string_device_sub_wbs.agent_string_device_sub_wb_type',
+                        'agent_string_devices.agent_string_device_type',
+                        'agent_string_operating_systems.agent_string_operating_system_type',
+                        'agent_string_operating_systems.agent_string_operating_system_version_type',
                     ]
                 );
                 return $agentString;

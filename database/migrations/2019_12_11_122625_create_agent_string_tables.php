@@ -411,7 +411,9 @@ values (3, '428c723c-3d1b-4d64-ba6a-ae7db2bb8ae8', 'PC')"
                     ->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->timestampTz('updated_at')
                     ->default(DB::raw('CURRENT_TIMESTAMP'));
-                $table->text('name')->unique();
+                $table->text('name');
+                $table->text('version')->default('');
+                $table->unique(['name', 'version']);
             }
         );
 
