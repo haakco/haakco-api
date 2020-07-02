@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel, to provide autocomplete information to your IDE
- * Generated for Laravel 7.18.0 on 2020-07-02 12:47:23.
+ * Generated for Laravel 7.18.0 on 2020-07-02 18:37:17.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -18301,6 +18301,142 @@ namespace Laravel\Horizon {
  
 }
 
+namespace Nipwaayoni\ElasticApmLaravel\Facades { 
+
+    /**
+     * APM Agent
+     *
+     * @link https://www.elastic.co/guide/en/apm/server/master/transaction-api.html
+     */ 
+    class ElasticApm {
+        
+        /**
+         * Event Factory
+         *
+         * @return \Nipwaayoni\EventFactoryInterface 
+         * @static 
+         */ 
+        public static function factory()
+        {
+                        /** @var \Nipwaayoni\Agent $instance */
+                        return $instance->factory();
+        }
+        
+        /**
+         * Query the Info endpoint of the APM Server
+         *
+         * @link https://www.elastic.co/guide/en/apm/server/7.3/server-info.html
+         * @return \Response 
+         * @static 
+         */ 
+        public static function info()
+        {
+                        /** @var \Nipwaayoni\Agent $instance */
+                        return $instance->info();
+        }
+        
+        /**
+         * Start the Transaction capturing
+         *
+         * @param string $name
+         * @param array $context
+         * @param float|null $start
+         * @return \Nipwaayoni\Transaction 
+         * @throws DuplicateTransactionNameException
+         * @static 
+         */ 
+        public static function startTransaction($name, $context = [], $start = null)
+        {
+                        /** @var \Nipwaayoni\Agent $instance */
+                        return $instance->startTransaction($name, $context, $start);
+        }
+        
+        /**
+         * Stop the Transaction
+         *
+         * @throws \Nipwaayoni\Exception\Transaction\UnknownTransactionException
+         * @param string $name
+         * @param array $meta, Def: []
+         * @return void 
+         * @static 
+         */ 
+        public static function stopTransaction($name, $meta = [])
+        {
+                        /** @var \Nipwaayoni\Agent $instance */
+                        $instance->stopTransaction($name, $meta);
+        }
+        
+        /**
+         * Get a Transaction
+         *
+         * @throws \Nipwaayoni\Exception\Transaction\UnknownTransactionException
+         * @param string $name
+         * @return \Nipwaayoni\Transaction 
+         * @static 
+         */ 
+        public static function getTransaction($name)
+        {
+                        /** @var \Nipwaayoni\Agent $instance */
+                        return $instance->getTransaction($name);
+        }
+        
+        /**
+         * Register a Thrown Exception, Error, etc.
+         *
+         * @link http://php.net/manual/en/class.throwable.php
+         * @param \Throwable $thrown
+         * @param array $context, Def: []
+         * @param \Nipwaayoni\Transaction $parent, Def: null
+         * @return void 
+         * @static 
+         */ 
+        public static function captureThrowable($thrown, $context = [], $parent = null)
+        {
+                        /** @var \Nipwaayoni\Agent $instance */
+                        $instance->captureThrowable($thrown, $context, $parent);
+        }
+        
+        /**
+         * Put an Event to the Events Pool
+         *
+         * @static 
+         */ 
+        public static function putEvent($event)
+        {
+                        /** @var \Nipwaayoni\Agent $instance */
+                        return $instance->putEvent($event);
+        }
+        
+        /**
+         * Get the Agent Config
+         *
+         * @return \Nipwaayoni\Config 
+         * @static 
+         */ 
+        public static function getConfig()
+        {
+                        /** @var \Nipwaayoni\Agent $instance */
+                        return $instance->getConfig();
+        }
+        
+        /**
+         * Send Data to APM Service
+         *
+         * @link https://github.com/philkra/elastic-apm-laravel/issues/22
+         * @link https://github.com/philkra/elastic-apm-laravel/issues/26
+         * @return bool 
+         * @static 
+         */ 
+        public static function send()
+        {
+                        /** @var \Nipwaayoni\Agent $instance */
+                        return $instance->send();
+        }
+         
+    }
+ 
+}
+
 namespace Spatie\ResponseCache\Facades { 
 
     /**
@@ -21361,6 +21497,8 @@ namespace  {
     class LaravelEnumGenerator extends \HaakCo\LaravelEnumGenerator\Facades\LaravelEnumGenerator {}
 
     class Horizon extends \Laravel\Horizon\Horizon {}
+
+    class ElasticApm extends \Nipwaayoni\ElasticApmLaravel\Facades\ElasticApm {}
 
     class ResponseCache extends \Spatie\ResponseCache\Facades\ResponseCache {}
  

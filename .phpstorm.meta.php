@@ -5,7 +5,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2020-07-02 12:47:24.
+    * Generated on 2020-07-02 18:37:18.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -68,6 +68,7 @@ namespace PHPSTORM_META {
         'Maatwebsite\Excel\Files\TemporaryFileFactory' => \Maatwebsite\Excel\Files\TemporaryFileFactory::class,
         'Maatwebsite\Excel\Transactions\TransactionHandler' => \Maatwebsite\Excel\Transactions\DbTransactionHandler::class,
         'Maatwebsite\Excel\Transactions\TransactionManager' => \Maatwebsite\Excel\Transactions\TransactionManager::class,
+        'Nipwaayoni\Agent' => \Nipwaayoni\Agent::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
         'Psr\Http\Message\ServerRequestInterface' => \Nyholm\Psr7\ServerRequest::class,
@@ -284,6 +285,7 @@ namespace PHPSTORM_META {
         'Maatwebsite\Excel\Files\TemporaryFileFactory' => \Maatwebsite\Excel\Files\TemporaryFileFactory::class,
         'Maatwebsite\Excel\Transactions\TransactionHandler' => \Maatwebsite\Excel\Transactions\DbTransactionHandler::class,
         'Maatwebsite\Excel\Transactions\TransactionManager' => \Maatwebsite\Excel\Transactions\TransactionManager::class,
+        'Nipwaayoni\Agent' => \Nipwaayoni\Agent::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
         'Psr\Http\Message\ServerRequestInterface' => \Nyholm\Psr7\ServerRequest::class,
@@ -500,6 +502,7 @@ namespace PHPSTORM_META {
         'Maatwebsite\Excel\Files\TemporaryFileFactory' => \Maatwebsite\Excel\Files\TemporaryFileFactory::class,
         'Maatwebsite\Excel\Transactions\TransactionHandler' => \Maatwebsite\Excel\Transactions\DbTransactionHandler::class,
         'Maatwebsite\Excel\Transactions\TransactionManager' => \Maatwebsite\Excel\Transactions\TransactionManager::class,
+        'Nipwaayoni\Agent' => \Nipwaayoni\Agent::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
         'Psr\Http\Message\ServerRequestInterface' => \Nyholm\Psr7\ServerRequest::class,
@@ -716,6 +719,7 @@ namespace PHPSTORM_META {
         'Maatwebsite\Excel\Files\TemporaryFileFactory' => \Maatwebsite\Excel\Files\TemporaryFileFactory::class,
         'Maatwebsite\Excel\Transactions\TransactionHandler' => \Maatwebsite\Excel\Transactions\DbTransactionHandler::class,
         'Maatwebsite\Excel\Transactions\TransactionManager' => \Maatwebsite\Excel\Transactions\TransactionManager::class,
+        'Nipwaayoni\Agent' => \Nipwaayoni\Agent::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
         'Psr\Http\Message\ServerRequestInterface' => \Nyholm\Psr7\ServerRequest::class,
@@ -932,6 +936,7 @@ namespace PHPSTORM_META {
         'Maatwebsite\Excel\Files\TemporaryFileFactory' => \Maatwebsite\Excel\Files\TemporaryFileFactory::class,
         'Maatwebsite\Excel\Transactions\TransactionHandler' => \Maatwebsite\Excel\Transactions\DbTransactionHandler::class,
         'Maatwebsite\Excel\Transactions\TransactionManager' => \Maatwebsite\Excel\Transactions\TransactionManager::class,
+        'Nipwaayoni\Agent' => \Nipwaayoni\Agent::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
         'Psr\Http\Message\ServerRequestInterface' => \Nyholm\Psr7\ServerRequest::class,
@@ -1148,6 +1153,7 @@ namespace PHPSTORM_META {
         'Maatwebsite\Excel\Files\TemporaryFileFactory' => \Maatwebsite\Excel\Files\TemporaryFileFactory::class,
         'Maatwebsite\Excel\Transactions\TransactionHandler' => \Maatwebsite\Excel\Transactions\DbTransactionHandler::class,
         'Maatwebsite\Excel\Transactions\TransactionManager' => \Maatwebsite\Excel\Transactions\TransactionManager::class,
+        'Nipwaayoni\Agent' => \Nipwaayoni\Agent::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
         'Psr\Http\Message\ServerRequestInterface' => \Nyholm\Psr7\ServerRequest::class,
@@ -1364,6 +1370,7 @@ namespace PHPSTORM_META {
         'Maatwebsite\Excel\Files\TemporaryFileFactory' => \Maatwebsite\Excel\Files\TemporaryFileFactory::class,
         'Maatwebsite\Excel\Transactions\TransactionHandler' => \Maatwebsite\Excel\Transactions\DbTransactionHandler::class,
         'Maatwebsite\Excel\Transactions\TransactionManager' => \Maatwebsite\Excel\Transactions\TransactionManager::class,
+        'Nipwaayoni\Agent' => \Nipwaayoni\Agent::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
         'Psr\Http\Message\ServerRequestInterface' => \Nyholm\Psr7\ServerRequest::class,
@@ -1580,6 +1587,7 @@ namespace PHPSTORM_META {
         'Maatwebsite\Excel\Files\TemporaryFileFactory' => \Maatwebsite\Excel\Files\TemporaryFileFactory::class,
         'Maatwebsite\Excel\Transactions\TransactionHandler' => \Maatwebsite\Excel\Transactions\DbTransactionHandler::class,
         'Maatwebsite\Excel\Transactions\TransactionManager' => \Maatwebsite\Excel\Transactions\TransactionManager::class,
+        'Nipwaayoni\Agent' => \Nipwaayoni\Agent::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
         'Psr\Http\Message\ServerRequestInterface' => \Nyholm\Psr7\ServerRequest::class,
