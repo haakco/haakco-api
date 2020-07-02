@@ -39,7 +39,7 @@ return [
 
     'spans' => [
         // Depth of backtraces
-        'backtraceDepth'=> env('APM_BACKTRACEDEPTH', 25),
+        'backtraceDepth' => env('APM_BACKTRACEDEPTH', 25),
 
         // Add source code to span
         'renderSource' => env('APM_RENDERSOURCE', true),
