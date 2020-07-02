@@ -27,6 +27,7 @@ namespace App\Models;
  * @property-read int|null $agent_string_extras_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\AgentStringOperatingSystem[] $agent_string_operating_systems
  * @property-read int|null $agent_string_operating_systems_count
+ * @property \UuidInterface $uuid
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ShortUrlTracking[] $short_url_trackings
  * @property-read int|null $short_url_trackings_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\AgentString newModelQuery()

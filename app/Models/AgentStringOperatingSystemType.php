@@ -13,6 +13,7 @@ namespace App\Models;
  * @property-read int|null $agent_string_operating_system_version_types_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\AgentStringOperatingSystem[] $agent_string_operating_systems
  * @property-read int|null $agent_string_operating_systems_count
+ * @property \UuidInterface $uuid
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\AgentStringOperatingSystemType newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\AgentStringOperatingSystemType newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\AgentStringOperatingSystemType query()

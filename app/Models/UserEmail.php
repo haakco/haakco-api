@@ -10,13 +10,12 @@ namespace App\Models;
  * App\Models\UserEmail
  *
  * @property-read \App\Models\Email $email
+ * @property \UuidInterface $uuid
  * @property-read \App\Models\User $user
- * @method static bool|null forceDelete()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\UserEmail newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\UserEmail newQuery()
  * @method static \Illuminate\Database\Query\Builder|\App\Models\UserEmail onlyTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\UserEmail query()
- * @method static bool|null restore()
  * @method static \Illuminate\Database\Query\Builder|\App\Models\UserEmail withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\Models\UserEmail withoutTrashed()
  * @mixin \Eloquent

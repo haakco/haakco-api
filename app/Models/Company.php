@@ -13,17 +13,16 @@ namespace App\Models;
  * @property-read int|null $company_roles_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\CompanyUser[] $company_users
  * @property-read int|null $company_users_count
- * @property-read \App\Models\ModelHasRole $model_has_role
+ * @property \UuidInterface $uuid
+ * @property-read \App\Models\ModelHasRole|null $model_has_role
  * @property-read \Illuminate\Database\Eloquent\Collection|\Spatie\Permission\Models\Role[] $roles
  * @property-read int|null $roles_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\User[] $users
  * @property-read int|null $users_count
- * @method static bool|null forceDelete()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Company newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Company newQuery()
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Company onlyTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Company query()
- * @method static bool|null restore()
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Company withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Company withoutTrashed()
  * @mixin \Eloquent

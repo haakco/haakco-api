@@ -8,6 +8,7 @@ use App\Models\User;
 /**
  * App\Models\BaseModel\BaseCompanyTeam
  *
+ * @property \UuidInterface $uuid
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BaseCompanyTeam newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BaseCompanyTeam newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BaseCompanyTeam query()

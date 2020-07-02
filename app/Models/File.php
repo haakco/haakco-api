@@ -17,6 +17,7 @@ namespace App\Models;
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\FileTag[] $file_tags
  * @property-read int|null $file_tags_count
  * @property-read \App\Models\FileType $file_type
+ * @property \UuidInterface $uuid
  * @property-read \App\Models\MimeType $mime_type
  * @property-read \Kalnoy\Nestedset\Collection|\App\Models\Tag[] $tags
  * @property-read int|null $tags_count

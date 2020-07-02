@@ -11,6 +11,7 @@ namespace App\Models;
  *
  * @property-read \App\Models\File $file
  * @property mixed $data_json
+ * @property \UuidInterface $uuid
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\FileExtra newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\FileExtra newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\FileExtra query()

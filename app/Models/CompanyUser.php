@@ -10,13 +10,12 @@ namespace App\Models;
  * App\Models\CompanyUser
  *
  * @property-read \App\Models\Company $company
+ * @property \UuidInterface $uuid
  * @property-read \App\Models\User $user
- * @method static bool|null forceDelete()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\CompanyUser newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\CompanyUser newQuery()
  * @method static \Illuminate\Database\Query\Builder|\App\Models\CompanyUser onlyTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\CompanyUser query()
- * @method static bool|null restore()
  * @method static \Illuminate\Database\Query\Builder|\App\Models\CompanyUser withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\Models\CompanyUser withoutTrashed()
  * @mixin \Eloquent

@@ -10,6 +10,7 @@ namespace App\Models;
  * App\Models\ShortUrlTracking
  *
  * @property-read \App\Models\AgentString $agent_string
+ * @property \UuidInterface $uuid
  * @property-read \App\Models\ShortUrl $short_url
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ShortUrlTrackingExtra[] $short_url_tracking_extras
  * @property-read int|null $short_url_tracking_extras_count

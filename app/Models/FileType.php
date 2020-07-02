@@ -13,6 +13,7 @@ namespace App\Models;
  * @property-read int|null $file_type_tags_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\File[] $files
  * @property-read int|null $files_count
+ * @property \UuidInterface $uuid
  * @property-read \Kalnoy\Nestedset\Collection|\App\Models\Tag[] $tags
  * @property-read int|null $tags_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\FileType newModelQuery()

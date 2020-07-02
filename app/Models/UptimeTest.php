@@ -9,6 +9,7 @@ namespace App\Models;
 /**
  * App\Models\UptimeTest
  *
+ * @property \UuidInterface $uuid
  * @property-read \App\Models\UptimeTestServer $uptime_test_server
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\UptimeTest newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\UptimeTest newQuery()

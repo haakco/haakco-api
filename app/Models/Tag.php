@@ -10,7 +10,7 @@ namespace App\Models;
  * App\Models\Tag
  *
  * @property int $id
- * @property mixed $uuid
+ * @property \UuidInterface $uuid
  * @property \Illuminate\Support\Carbon $created_at
  * @property \Illuminate\Support\Carbon $updated_at
  * @property mixed $name
@@ -32,7 +32,9 @@ namespace App\Models;
  * @property-read \App\Models\Tag $tag
  * @property-read \Kalnoy\Nestedset\Collection|\App\Models\Tag[] $tags
  * @property-read int|null $tags_count
+ * @method static \Kalnoy\Nestedset\Collection|static[] all($columns = ['*'])
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag d()
+ * @method static \Kalnoy\Nestedset\Collection|static[] get($columns = ['*'])
  * @method static \Kalnoy\Nestedset\QueryBuilder|\App\Models\Tag newModelQuery()
  * @method static \Kalnoy\Nestedset\QueryBuilder|\App\Models\Tag newQuery()
  * @method static \Kalnoy\Nestedset\QueryBuilder|\App\Models\Tag query()

@@ -10,6 +10,7 @@ namespace App\Models;
  * App\Models\CompanyRole
  *
  * @property-read \App\Models\Company $company
+ * @property \UuidInterface $uuid
  * @property-read \Spatie\Permission\Models\Role $role
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\CompanyRole newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\CompanyRole newQuery()

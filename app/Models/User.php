@@ -40,13 +40,11 @@ namespace App\Models;
  * @property-read int|null $user_emails_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\UserImage[] $user_images
  * @property-read int|null $user_images_count
- * @method static bool|null forceDelete()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User newQuery()
  * @method static \Illuminate\Database\Query\Builder|\App\Models\User onlyTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BaseUserModel permission($permissions)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User query()
- * @method static bool|null restore()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BaseUserModel role($roles, $guard = null)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereDeletedAt($value)

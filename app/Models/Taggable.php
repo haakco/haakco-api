@@ -10,6 +10,7 @@ namespace App\Models;
  * App\Models\Taggable
  *
  * @property int $tag_id
+ * @property \UuidInterface $uuid
  * @property \Illuminate\Support\Carbon $created_at
  * @property \Illuminate\Support\Carbon $updated_at
  * @property string $taggable_type
@@ -23,6 +24,7 @@ namespace App\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Taggable whereTaggableId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Taggable whereTaggableType($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Taggable whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Taggable whereUuid($value)
  * @mixin \Eloquent
  */
 class Taggable extends \App\Models\BaseModel\BaseModel

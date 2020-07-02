@@ -13,6 +13,7 @@ namespace App\Models;
  * @property-read int|null $extensions_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\File[] $files
  * @property-read int|null $files_count
+ * @property \UuidInterface $uuid
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\MimeTypeExtension[] $mime_type_extensions
  * @property-read int|null $mime_type_extensions_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\MimeTypeExtra[] $mime_type_extras
