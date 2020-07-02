@@ -9,6 +9,7 @@ namespace App\Models;
 /**
  * App\Models\MimeName
  *
+ * @property \UuidInterface $uuid
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\MimeTypeName[] $mime_type_names
  * @property-read int|null $mime_type_names_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\MimeName newModelQuery()

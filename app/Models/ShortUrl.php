@@ -9,6 +9,7 @@ namespace App\Models;
 /**
  * App\Models\ShortUrl
  *
+ * @property \UuidInterface $uuid
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ShortUrlTracking[] $short_url_trackings
  * @property-read int|null $short_url_trackings_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ShortUrl newModelQuery()

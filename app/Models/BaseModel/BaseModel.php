@@ -8,6 +8,8 @@ use Watson\Rememberable\Rememberable;
 
 /**
  * App\Models\BaseModel\BaseModel
+ *
+ * @property \UuidInterface $uuid
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BaseModel newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BaseModel newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BaseModel query()

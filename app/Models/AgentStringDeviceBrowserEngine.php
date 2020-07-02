@@ -11,6 +11,7 @@ namespace App\Models;
  *
  * @property-read \App\Models\AgentString $agent_string
  * @property-read \App\Models\AgentStringDeviceBrowserEngineType $agent_string_device_browser_engine_type
+ * @property \UuidInterface $uuid
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\AgentStringDeviceBrowserEngine newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\AgentStringDeviceBrowserEngine newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\AgentStringDeviceBrowserEngine query()

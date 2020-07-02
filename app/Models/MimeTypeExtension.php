@@ -10,6 +10,7 @@ namespace App\Models;
  * App\Models\MimeTypeExtension
  *
  * @property-read \App\Models\Extension $extension
+ * @property \UuidInterface $uuid
  * @property-read \App\Models\MimeType $mime_type
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\MimeTypeExtension newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\MimeTypeExtension newQuery()

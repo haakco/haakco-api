@@ -10,6 +10,7 @@ namespace App\Models;
  * App\Models\FileTypeTag
  *
  * @property-read \App\Models\FileType $file_type
+ * @property \UuidInterface $uuid
  * @property-read \App\Models\Tag $tag
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\FileTypeTag newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\FileTypeTag newQuery()

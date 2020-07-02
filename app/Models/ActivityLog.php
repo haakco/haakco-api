@@ -9,6 +9,7 @@ namespace App\Models;
 /**
  * App\Models\ActivityLog
  *
+ * @property \UuidInterface $uuid
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ActivityLog newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ActivityLog newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ActivityLog query()

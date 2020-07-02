@@ -10,6 +10,7 @@ namespace App\Models;
  * App\Models\ShortUrlTrackingExtra
  *
  * @property mixed $data_json
+ * @property \UuidInterface $uuid
  * @property-read \App\Models\ShortUrlTracking $short_url_tracking
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ShortUrlTrackingExtra newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ShortUrlTrackingExtra newQuery()

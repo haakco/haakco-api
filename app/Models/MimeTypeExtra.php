@@ -10,6 +10,7 @@ namespace App\Models;
  * App\Models\MimeTypeExtra
  *
  * @property mixed $data_json
+ * @property \UuidInterface $uuid
  * @property-read \App\Models\MimeType $mime_type
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\MimeTypeExtra newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\MimeTypeExtra newQuery()

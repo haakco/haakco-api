@@ -24,14 +24,12 @@ fi
 ./artisan responsecache:clear
 ./artisan package:discover
 ./artisan route:clear
-./artisan opcache:clear
 
 if [[ "${LV_DO_CACHING}" = "TRUE" ]]; then
   echo "LV_DO_CACHING ENABLED"
   ./artisan config:cache
   ./artisan route:cache
   ./artisan view:cache
-  ./artisan opcache:compile || true
 fi
 
 #./artisan passport:keys

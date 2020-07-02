@@ -11,6 +11,7 @@ namespace App\Models;
  *
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\AgentStringDevice[] $agent_string_devices
  * @property-read int|null $agent_string_devices_count
+ * @property \UuidInterface $uuid
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\AgentStringDeviceType newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\AgentStringDeviceType newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\AgentStringDeviceType query()

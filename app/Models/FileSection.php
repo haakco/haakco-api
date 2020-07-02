@@ -11,6 +11,7 @@ namespace App\Models;
  *
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\File[] $files
  * @property-read int|null $files_count
+ * @property \UuidInterface $uuid
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\FileSection newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\FileSection newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\FileSection query()

@@ -10,6 +10,7 @@ namespace App\Models;
  * App\Models\EmailGravatar
  *
  * @property-read \App\Models\Email $email
+ * @property \UuidInterface $uuid
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\EmailGravatar newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\EmailGravatar newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\EmailGravatar query()

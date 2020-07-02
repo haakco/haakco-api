@@ -10,13 +10,12 @@ namespace App\Models;
  * App\Models\UserImage
  *
  * @property-read \App\Models\File $file
+ * @property \UuidInterface $uuid
  * @property-read \App\Models\User $user
- * @method static bool|null forceDelete()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\UserImage newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\UserImage newQuery()
  * @method static \Illuminate\Database\Query\Builder|\App\Models\UserImage onlyTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\UserImage query()
- * @method static bool|null restore()
  * @method static \Illuminate\Database\Query\Builder|\App\Models\UserImage withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\Models\UserImage withoutTrashed()
  * @mixin \Eloquent
