@@ -39,9 +39,11 @@ class UrlLibrary
         $uuidLen = ($shortUrl->uuid);
         for ($i = $this->minNumberCharacters; $i <= $uuidLen; $i++) {
             $codeToTest = substr($shortUrl->uuid, 0, $i);
-            if (ShortUrl::query()
+            if (
+                ShortUrl::query()
                 ->where('code', $codeToTest)
-                ->exists()) {
+                ->exists()
+            ) {
                 $shortUrl->code = $codeToTest;
                 $shortUrl->short_url = config('haakco.short_url') . '/' . $codeToTest;
                 $shortUrl->save();
