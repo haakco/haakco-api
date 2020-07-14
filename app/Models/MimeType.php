@@ -37,11 +37,6 @@ class MimeType extends \App\Models\BaseModel\BaseModel
         'name'
     ];
 
-    public function files()
-    {
-        return $this->hasMany(\App\Models\File::class, 'mime_type_id');
-    }
-
     public function extensions()
     {
         return $this->belongsToMany(\App\Models\Extension::class, 'files.mime_type_extensions', 'mime_type_id')
@@ -57,6 +52,11 @@ class MimeType extends \App\Models\BaseModel\BaseModel
     public function mime_type_extras()
     {
         return $this->hasMany(\App\Models\MimeTypeExtra::class, 'mime_type_id');
+    }
+
+    public function files()
+    {
+        return $this->hasMany(\App\Models\File::class, 'mime_type_id');
     }
 
     public function mime_type_names()

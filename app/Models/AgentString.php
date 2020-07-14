@@ -59,6 +59,16 @@ class AgentString extends \App\Models\BaseModel\BaseModel
         return $this->hasMany(\App\Models\AgentStringDeviceBrowser::class, 'agent_string_id');
     }
 
+    public function agent_string_device_browser_engines()
+    {
+        return $this->hasMany(\App\Models\AgentStringDeviceBrowserEngine::class, 'agent_string_id');
+    }
+
+    public function agent_string_operating_systems()
+    {
+        return $this->hasMany(\App\Models\AgentStringOperatingSystem::class, 'agent_string_id');
+    }
+
     public function agent_string_devices()
     {
         return $this->hasMany(\App\Models\AgentStringDevice::class, 'agent_string_id');
@@ -79,19 +89,9 @@ class AgentString extends \App\Models\BaseModel\BaseModel
         return $this->hasMany(\App\Models\AgentStringDeviceManufacturer::class, 'agent_string_id');
     }
 
-    public function agent_string_device_browser_engines()
-    {
-        return $this->hasMany(\App\Models\AgentStringDeviceBrowserEngine::class, 'agent_string_id');
-    }
-
     public function agent_string_device_sub_wbs()
     {
         return $this->hasMany(\App\Models\AgentStringDeviceSubWb::class, 'agent_string_id');
-    }
-
-    public function agent_string_operating_systems()
-    {
-        return $this->hasMany(\App\Models\AgentStringOperatingSystem::class, 'agent_string_id');
     }
 
     public function short_url_trackings()

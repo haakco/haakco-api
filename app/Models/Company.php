@@ -6,10 +6,9 @@
 
 namespace App\Models;
 
-use App\Models\BaseModel\BaseCompanyModel;
-
 /**
  * App\Models\Company
+ *
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\CompanyUser[] $company_users
  * @property-read int|null $company_users_count
  * @property \UuidInterface $uuid
@@ -21,11 +20,12 @@ use App\Models\BaseModel\BaseCompanyModel;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Company newQuery()
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Company onlyTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Company query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BasePermissionModel whereFindByName($permissionName)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Company withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Company withoutTrashed()
  * @mixin \Eloquent
  */
-class Company extends BaseCompanyModel
+class Company extends \App\Models\BaseModel\BasePermissionModel
 {
     use \Illuminate\Database\Eloquent\SoftDeletes;
 
