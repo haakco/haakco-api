@@ -4,7 +4,6 @@ namespace App\Libraries\User;
 
 use App\Models\Company;
 use App\Models\Enum\Rights\RightsEnum;
-use App\Models\Enum\RolesEnum;
 use App\Models\User;
 
 class CompanyLibrary
@@ -22,7 +21,7 @@ class CompanyLibrary
         $company = Company::addCompany($companyName, $isPrimary);
         $company->assignUser($user, true);
 
-        $user->assignRoleByName($company, RolesEnum::OWNER_NAME);
+        $user->assignRoleByName($company, RightsEnum::CLIENT_ROLE_OWNER);
         return $company;
     }
 
@@ -37,7 +36,7 @@ class CompanyLibrary
         $isPrimary = true;
         $company = $this->setupNewCompany($primaryUser, config('haakco.company_name'), $isPrimary);
 
-        $primaryUser->assignRoleByName($company, RolesEnum::SYSTEM_SUPER_ADMIN_NAME);
+        $primaryUser->assignRoleByName($company, RightsEnum::SYSTEM_ROLE_SUPER_ADMIN);
         return $company;
     }
 }

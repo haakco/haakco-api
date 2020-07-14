@@ -28,8 +28,10 @@ class CreateShortUrlTable extends Migration
                     ->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->timestampTz('dt_deleted')->nullable();
                 $table->text('full_url');
+                $table->text('code')->default('');
                 $table->text('short_url')->default('');
                 $table->index(['uuid']);
+                $table->index(['code']);
                 $table->index(['short_url']);
             }
         );

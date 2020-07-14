@@ -16,11 +16,11 @@ use Watson\Rememberable\Rememberable;
 
 /**
  * App\Models\BaseModel\BaseUserModel
+ *
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\BaseModel\BaseOauthClient[] $clients
  * @property-read int|null $clients_count
  * @property \UuidInterface $uuid
- * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[]
- *     $notifications
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
  * @property-read int|null $notifications_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\BaseModel\BaseOauthAccessToken[] $tokens
  * @property-read int|null $tokens_count

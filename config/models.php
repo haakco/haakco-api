@@ -457,7 +457,7 @@ return [
     ],
     'users' => [
         'companies' => [
-            'parent' => App\Models\BaseModel\BasePermissionModel::class,
+            'parent' => App\Models\BaseModel\BaseCompanyModel::class,
         ],
         'permissions' => [
             'parent' => App\Models\BaseModel\BasePermissionModel::class,

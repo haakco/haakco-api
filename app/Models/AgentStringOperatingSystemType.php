@@ -31,13 +31,13 @@ class AgentStringOperatingSystemType extends \App\Models\BaseModel\BaseModel
         'name'
     ];
 
-    public function agent_string_operating_systems()
-    {
-        return $this->hasMany(\App\Models\AgentStringOperatingSystem::class, 'agent_string_operating_system_type_id');
-    }
-
     public function agent_string_operating_system_version_types()
     {
         return $this->hasMany(\App\Models\AgentStringOperatingSystemVersionType::class, 'agent_string_operating_system_type_id');
+    }
+
+    public function agent_string_operating_systems()
+    {
+        return $this->hasMany(\App\Models\AgentStringOperatingSystem::class, 'agent_string_operating_system_type_id');
     }
 }
