@@ -14,12 +14,14 @@ use Irazasyed\LaravelGAMP\Facades\GAMP;
 
 class UrlLibrary
 {
+    private $minNumberCharacters = 5;
+
     /**
-     * @param $shortUrl
+     * @param string $fullUrl
      *
      * @return ShortUrl
      */
-    public function shortenUrl($fullUrl): ShortUrl
+    public function shortenUrl(string $fullUrl): ShortUrl
     {
         /** @var ShortUrl $shortUrl */
         $shortUrl = ShortUrl::create(
@@ -28,9 +30,24 @@ class UrlLibrary
             ]
         );
 
-        $shortUrl->short_url = config('haakco.short_url') . '/' . $shortUrl->uuid;
-        $shortUrl->save();
+        return $this->findShortestCodeFromUUid($shortUrl);
+    }
 
+    // Doing quick and dirty unoptimised. Can be made faster in the future
+    public function findShortestCodeFromUUid(ShortUrl $shortUrl): ?ShortUrl
+    {
+        $uuidLen = ($shortUrl->uuid);
+        for ($i = $this->minNumberCharacters; $i <= $uuidLen; $i++) {
+            $codeToTest = substr($shortUrl->uuid, 0, $i);
+            if (ShortUrl::query()
+                ->where('code', $codeToTest)
+                ->exists()) {
+                $shortUrl->code = $codeToTest;
+                $shortUrl->short_url = config('haakco.short_url') . '/' . $codeToTest;
+                $shortUrl->save();
+                break;
+            }
+        }
         return $shortUrl;
     }
 
