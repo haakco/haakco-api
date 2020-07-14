@@ -11,11 +11,11 @@ class UsersSeeder extends Seeder
      */
     private $faker;
 
-    private $noOfSharedUsers = 5;
-    private $noOfOwnerUsers = 5;
+    private int $noOfSharedUsers = 3;
+    private int $noOfOwnerUsers = 2;
 
-    private $sharedUsers = [];
-    private $ownerUsers = [];
+    private array $sharedUsers = [];
+    private array $ownerUsers = [];
 
     public function __construct()
     {
@@ -29,6 +29,7 @@ class UsersSeeder extends Seeder
      * @param \App\Libraries\User\CompanyLibrary $companyLibrary
      *
      * @return void
+     * @throws \Exception
      */
     public function run(UserLibrary $userLibrary, CompanyLibrary $companyLibrary)
     {
@@ -55,11 +56,8 @@ class UsersSeeder extends Seeder
                 $this->faker->company
             );
 
-            $tempRole = $companyLibrary->addNewRole($newCompany, $this->faker->word);
-
             foreach ($this->sharedUsers as $sharedUser) {
-                $companyLibrary->addUserToCompany($newCompany, $sharedUser);
-                $sharedUser->assignRole($newCompany, $tempRole->name);
+                $newCompany->assignUser($sharedUser);
             }
         }
     }

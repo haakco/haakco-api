@@ -32,7 +32,6 @@ class CreatePermissionTables extends Migration
 
         \App\Libraries\Helper\DatabaseLibrary::setUpdatedAtTrigger('users.companies');
 
-
         Schema::create(
             'users.company_users',
             function (Blueprint $table) {
@@ -63,11 +62,8 @@ class CreatePermissionTables extends Migration
 
         \App\Libraries\Helper\DatabaseLibrary::setUpdatedAtTrigger('users.company_users');
 
-        $tableNames = config('permission.table_names');
-        $columnNames = config('permission.column_names');
-
         Schema::create(
-            $tableNames['permissions'],
+            'users.permissions',
             function (Blueprint $table) {
                 $table->bigIncrements('id');
                 $table->uuid('uuid')
@@ -79,15 +75,14 @@ class CreatePermissionTables extends Migration
                     ->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->timestampTz('deleted_at')->nullable();
                 $table->boolean('is_system')->default(false);
-                $table->text('name');
-                $table->text('guard_name');
+                $table->text('name')->unique();
             }
         );
 
-        \App\Libraries\Helper\DatabaseLibrary::setUpdatedAtTrigger($tableNames['permissions']);
+        \App\Libraries\Helper\DatabaseLibrary::setUpdatedAtTrigger('users.permissions');
 
         Schema::create(
-            $tableNames['roles'],
+            'users.roles',
             function (Blueprint $table) {
                 $table->bigIncrements('id');
                 $table->uuid('uuid')
@@ -100,16 +95,15 @@ class CreatePermissionTables extends Migration
                 $table->timestampTz('deleted_at')->nullable();
                 $table->boolean('is_system')->default(false);
                 $table->boolean('is_default')->default(false);
-                $table->text('name');
-                $table->text('guard_name');
+                $table->text('name')->unique();
             }
         );
 
-        \App\Libraries\Helper\DatabaseLibrary::setUpdatedAtTrigger($tableNames['roles']);
+        \App\Libraries\Helper\DatabaseLibrary::setUpdatedAtTrigger('users.roles');
 
         Schema::create(
-            'users.company_roles',
-            function (Blueprint $table) use ($tableNames) {
+            'users.user_has_roles',
+            function (Blueprint $table) {
                 $table->bigIncrements('id');
                 $table->uuid('uuid')
                     ->default(\Illuminate\Support\Facades\DB::raw('uuid_generate_v4()'))
@@ -118,8 +112,14 @@ class CreatePermissionTables extends Migration
                     ->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->timestampTz('updated_at')
                     ->default(DB::raw('CURRENT_TIMESTAMP'));
+                $table->unsignedBigInteger('user_id');
                 $table->unsignedBigInteger('company_id');
                 $table->unsignedBigInteger('role_id');
+
+                $table->foreign('user_id')
+                    ->references('id')
+                    ->on('public.users')
+                    ->onDelete('cascade');
 
                 $table->foreign('company_id')
                     ->references('id')
@@ -128,99 +128,56 @@ class CreatePermissionTables extends Migration
 
                 $table->foreign('role_id')
                     ->references('id')
-                    ->on($tableNames['roles'])
+                    ->on('users.roles')
                     ->onDelete('cascade');
 
-                $table->unique(['company_id', 'role_id']);
+                $table->unique(
+                    [
+                        'user_id',
+                        'company_id',
+                        'role_id',
+                    ]
+                );
             }
         );
 
-        \App\Libraries\Helper\DatabaseLibrary::setUpdatedAtTrigger('users.company_roles');
+        \App\Libraries\Helper\DatabaseLibrary::setUpdatedAtTrigger('users.user_has_roles');
 
         Schema::create(
-            $tableNames['model_has_permissions'],
-            function (Blueprint $table) use ($tableNames, $columnNames) {
-                $table->unsignedBigInteger('permission_id');
+            'users.role_has_permissions',
+            function (Blueprint $table) {
+                $table->bigIncrements('id');
                 $table->uuid('uuid')
                     ->default(\Illuminate\Support\Facades\DB::raw('uuid_generate_v4()'))
                     ->unique();
+                $table->timestampTz('created_at')
+                    ->default(DB::raw('CURRENT_TIMESTAMP'));
+                $table->timestampTz('updated_at')
+                    ->default(DB::raw('CURRENT_TIMESTAMP'));
 
-                $table->text('model_type');
-                $table->unsignedBigInteger($columnNames['model_morph_key']);
-                $table->index(
-                    [$columnNames['model_morph_key'], 'model_type',],
-                    'model_has_permissions_model_id_model_type_index'
-                );
-
-                $table->foreign('permission_id')
-                    ->references('id')
-                    ->on($tableNames['permissions'])
-                    ->onDelete('cascade');
-
-                $table->primary(
-                    ['permission_id', $columnNames['model_morph_key'], 'model_type'],
-                    'model_has_permissions_permission_model_type_primary'
-                );
-            }
-        );
-
-        Schema::create(
-            $tableNames['model_has_roles'],
-            function (Blueprint $table) use ($tableNames, $columnNames) {
-                $table->unsignedBigInteger('role_id');
-                $table->uuid('uuid')
-                    ->default(\Illuminate\Support\Facades\DB::raw('uuid_generate_v4()'))
-                    ->unique();
-
-                $table->text('model_type');
-                $table->unsignedBigInteger($columnNames['model_morph_key']);
-                $table->unsignedBigInteger('company_id');
-
-                $table->index(
-                    [$columnNames['model_morph_key'], 'model_type',],
-                    'model_has_roles_model_id_model_type_index'
-                );
-
-                $table->foreign('role_id')
-                    ->references('id')
-                    ->on($tableNames['roles'])
-                    ->onDelete('cascade');
-
-                $table->primary(
-                    ['role_id', $columnNames['model_morph_key'], 'company_id', 'model_type'],
-                    'model_has_roles_role_model_type_primary'
-                );
-
-                $table->foreign('company_id')
-                    ->references('id')
-                    ->on('users.companies')
-                    ->onDelete('cascade');
-            }
-        );
-
-        Schema::create(
-            $tableNames['role_has_permissions'],
-            function (Blueprint $table) use ($tableNames) {
                 $table->unsignedBigInteger('permission_id');
                 $table->unsignedBigInteger('role_id');
 
                 $table->foreign('permission_id')
                     ->references('id')
-                    ->on($tableNames['permissions'])
+                    ->on('users.permissions')
                     ->onDelete('cascade');
 
                 $table->foreign('role_id')
                     ->references('id')
-                    ->on($tableNames['roles'])
+                    ->on('users.roles')
                     ->onDelete('cascade');
 
-                $table->primary(['permission_id', 'role_id'], 'role_has_permissions_permission_id_role_id_primary');
+                $table->unique(
+                    [
+                        'permission_id',
+                        'role_id'
+                    ]
+                );
             }
         );
 
-        app('cache')
-            ->store(config('permission.cache.store') !== 'default' ? config('permission.cache.store') : null)
-            ->forget(config('permission.cache.key'));
+        \App\Libraries\Helper\DatabaseLibrary::setUpdatedAtTrigger('users.role_has_permissions');
     }
 
     /**
@@ -229,14 +186,10 @@ class CreatePermissionTables extends Migration
      */
     public function down()
     {
-        $tableNames = config('permission.table_names');
-
-        Schema::drop($tableNames['role_has_permissions']);
-        Schema::drop($tableNames['model_has_roles']);
-        Schema::drop($tableNames['model_has_permissions']);
-        Schema::drop('users.company_roles');
-        Schema::drop($tableNames['roles']);
-        Schema::drop($tableNames['permissions']);
+        Schema::drop('users.role_has_permissions');
+        Schema::drop('users.user_has_roles');
+        Schema::drop('users.roles');
+        Schema::drop('users.permissions');
         Schema::drop('users.company_users');
         Schema::drop('users.companies');
     }

@@ -2,10 +2,10 @@
 
 use App\Libraries\User\UserLibrary;
 use App\Libraries\User\UserRightsLibrary;
+use App\Models\Permission;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
-use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Models\Role;
 
 class SetInitialPermissions extends Migration
 {
