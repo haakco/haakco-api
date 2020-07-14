@@ -3,7 +3,8 @@
 namespace App\Models\BaseModel;
 
 use App\Models\Company;
-use App\Models\Enum\Rights\RightsEnum;
+use App\Models\Enum\PermissionsEnum;
+use App\Models\Enum\RolesEnum;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\DB;
@@ -12,12 +13,12 @@ use Spatie\Permission\Exceptions\CompanyAlreadyExist;
 
 /**
  * App\Models\BaseModel\BaseCompanyModel
- *
  * @property \UuidInterface $uuid
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BaseCompanyModel newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BaseCompanyModel newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BaseCompanyModel query()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BaseCompanyModel whereFindByName($companyName)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BaseCompanyModel
+ *     whereFindByName($companyName)
  * @mixin \Eloquent
  */
 class BaseCompanyModel extends \App\Models\BaseModel\BaseModel
@@ -79,9 +80,9 @@ class BaseCompanyModel extends \App\Models\BaseModel\BaseModel
                 ],
             ]
         );
-        $user->assignRoleByName($this, RightsEnum::CLIENT_ROLE_USER);
+        $user->assignRoleByName($this, RolesEnum::USER_NAME);
         if ($this->is_system) {
-            $user->assignRoleByName($this, RightsEnum::SYSTEM_PERMISSION_IS_SYSTEM_USER);
+            $user->assignRoleByName($this, PermissionsEnum::SYSTEM_USER_NAME);
         }
         return $this;
     }

@@ -67,34 +67,6 @@ class UserLibrary
         (new EmailLibrary())->emailAdd($user->email);
     }
 
-    public function getUserPermissions(User $user): array
-    {
-        return $user->getPermissionsViaRoles()
-            ->sortBy('name')
-            ->unique()
-            ->pluck('name', 'uuid')
-            ->toArray();
-    }
-
-    public function getCurrentUserPermissions(): array
-    {
-        return $this->getUserPermissions(Auth::user());
-    }
-
-    public function getUserRolls(User $user): array
-    {
-        return $user->roles
-            ->sortBy('name')
-            ->unique()
-            ->pluck('name', 'uuid')
-            ->toArray();
-    }
-
-    public function getCurrentRolls(): array
-    {
-        return $this->getUserRolls(Auth::user());
-    }
-
     /**
      * @param \App\Models\User $user
      *
@@ -133,8 +105,8 @@ class UserLibrary
         $result->updated_at = $user->updated_at;
         $result->email_verified_at = $user->email_verified_at;
         $result->name = $user->name;
-        $result->permissions = $this->getUserPermissions($user);
-        $result->roles = $this->getUserRolls($user);
+        $result->permissions = $user->permissionsSimple();
+        $result->roles = $user->rolesSimple();
         $result->email = $user->email;
         $result->imgUrl = $this->getUserImage($user);
 

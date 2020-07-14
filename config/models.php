@@ -441,11 +441,6 @@ return [
             ],
         ],
     ],
-    'companies' => [
-        'company_teams' => [
-            'parent' => App\Models\BaseModel\BaseCompanyTeam::class,
-        ],
-    ],
     'files' => [
         'file_extra' => [
             'parent' => App\Models\BaseModel\BaseModel::class,

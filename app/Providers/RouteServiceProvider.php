@@ -66,6 +66,14 @@ class RouteServiceProvider extends ServiceProvider
             ->namespace($this->namespace)
             ->group(base_path('routes/api.auth.admin.user.php'));
 
+        Route::prefix(config('haakco.api_path', 'api/v1'))
+            ->namespace($this->namespace)
+            ->group(base_path('routes/api.auth.file.php'));
+
+        Route::prefix(config('haakco.api_path', 'api/v1'))
+            ->namespace($this->namespace)
+            ->group(base_path('routes/api.auth.rights.php'));
+
         // Uptime Test endpoints
         Route::prefix(config('haakco.api_path', 'api/v1'))
             ->namespace($this->namespace)

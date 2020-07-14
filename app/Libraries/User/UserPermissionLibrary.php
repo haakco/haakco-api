@@ -2,7 +2,7 @@
 
 namespace App\Libraries\User;
 
-use App\Models\Enum\Rights\RightsEnum;
+use App\Models\Enum\PermissionsEnum;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,7 +21,7 @@ class UserPermissionLibrary
             $user = Auth::user();
         }
         return $user instanceof User &&
-            $user->hasAnyPermission($permissions);
+            $user->hasAnyPermissionByName($permissions);
     }
 
     /**
@@ -55,7 +55,7 @@ class UserPermissionLibrary
             $user = Auth::user();
         }
         return $user instanceof User &&
-            $user->hasAnyPermission([RightsEnum::SYSTEM_PERMISSION_IS_SYSTEM_USER]);
+            $user->hasAnyPermissionByName([PermissionsEnum::SYSTEM_USER_NAME]);
     }
 
     /**
