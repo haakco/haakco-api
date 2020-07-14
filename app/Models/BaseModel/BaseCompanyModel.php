@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Models\BaseModel;
-
 
 use App\Models\Company;
 use App\Models\Enum\Rights\RightsEnum;
