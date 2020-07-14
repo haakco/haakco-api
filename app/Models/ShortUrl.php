@@ -31,6 +31,7 @@ class ShortUrl extends \App\Models\BaseModel\BaseModel
 
     protected $fillable = [
         'dt_deleted',
+        'code',
         'full_url',
         'short_url'
     ];

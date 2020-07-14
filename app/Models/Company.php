@@ -20,12 +20,12 @@ namespace App\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Company newQuery()
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Company onlyTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Company query()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BasePermissionModel whereFindByName($permissionName)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BaseCompanyModel whereFindByName($companyName)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Company withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Company withoutTrashed()
  * @mixin \Eloquent
  */
-class Company extends \App\Models\BaseModel\BasePermissionModel
+class Company extends \App\Models\BaseModel\BaseCompanyModel
 {
     use \Illuminate\Database\Eloquent\SoftDeletes;
 
