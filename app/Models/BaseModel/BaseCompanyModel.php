@@ -10,6 +10,16 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Spatie\Permission\Exceptions\CompanyAlreadyExist;
 
+/**
+ * App\Models\BaseModel\BaseCompanyModel
+ *
+ * @property \UuidInterface $uuid
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BaseCompanyModel newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BaseCompanyModel newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BaseCompanyModel query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BaseCompanyModel whereFindByName($companyName)
+ * @mixin \Eloquent
+ */
 class BaseCompanyModel extends \App\Models\BaseModel\BaseModel
 {
     /**

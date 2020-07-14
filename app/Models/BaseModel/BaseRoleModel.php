@@ -9,11 +9,12 @@ use Spatie\Permission\Exceptions\PermissionDoesNotExist;
 
 /**
  * App\Models\BaseModel\BaseRoleModel
+ *
  * @property \UuidInterface $uuid
- * @method static Builder|BaseRoleModel newModelQuery()
- * @method static Builder|BaseRoleModel newQuery()
- * @method static Builder|BaseRoleModel query()
- * @method static Builder|BaseRoleModel whereFindByName($roleName)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BaseRoleModel newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BaseRoleModel newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BaseRoleModel query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BaseRoleModel whereFindByName($roleName)
  * @mixin \Eloquent
  */
 class BaseRoleModel extends BaseModel

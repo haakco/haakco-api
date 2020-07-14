@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Builder;
 
 /**
  * App\Models\BaseModel\BasePermissionModel
+ *
  * @property \UuidInterface $uuid
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BasePermissionModel newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BasePermissionModel newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BasePermissionModel query()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BasePermissionModel
- *     whereFindByName($permissionName)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\BaseModel\BasePermissionModel whereFindByName($permissionName)
  * @mixin \Eloquent
  */
 class BasePermissionModel extends BaseModel
