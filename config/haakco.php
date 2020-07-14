@@ -14,6 +14,10 @@ return [
             env('HAAK_SERVER_ADMIN_EMAIL', 'serveradmin@example.com'),
     ],
 
+    'rights_tables' => [
+        'roles' => 'users.roles',
+        'permissions' => 'users.permissions',
+    ],
     'api_path' => 'api/v1',
     'registration_enabled' => env('HAAK_REGISTRATION_ENABLED', true),
 

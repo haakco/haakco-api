@@ -290,7 +290,6 @@ return [
             'ltm_translations',
             'jobs',
             'migrations',
-            'model_has_permissions',
             'notifications',
             'oauth_access_tokens',
             'oauth_auth_codes',
@@ -298,10 +297,7 @@ return [
             'oauth_personal_access_clients',
             'oauth_refresh_tokens',
             'password_resets',
-            'permissions',
             'pg_buffercache',
-            'roles',
-            'role_has_permissions',
             'sessions',
             'telescope_entries',
             'telescope_entries_tags',
@@ -462,6 +458,17 @@ return [
             'use' => [
                 App\Models\ModelTraits\DataJsonTrait::class,
             ],
+        ],
+    ],
+    'users' => [
+        'companies' => [
+            'parent' => App\Models\BaseModel\BasePermissionModel::class,
+        ],
+        'permissions' => [
+            'parent' => App\Models\BaseModel\BasePermissionModel::class,
+        ],
+        'roles' => [
+            'parent' => App\Models\BaseModel\BaseRoleModel::class,
         ],
     ],
     'short_urls' => [

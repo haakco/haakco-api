@@ -10,7 +10,7 @@ class RightsEnum
     //All system users must have this role
     public const SYSTEM_ROLE_USER = 'System User';
 
-    public const DEFAULT_SYSTEM_ROLE_ARRAY = [
+    public const SYSTEM_ROLE_ARRAY = [
         self::SYSTEM_ROLE_SUPER_ADMIN,
         self::SYSTEM_ROLE_USER,
     ];
@@ -35,7 +35,7 @@ class RightsEnum
     //All system users must have this role
     public const CLIENT_ROLE_USER = 'User';
 
-    public const DEFAULT_CLIENT_ROLE_ARRAY = [
+    public const CLIENT_ROLE_ARRAY = [
         self::CLIENT_ROLE_OWNER,
         self::CLIENT_ROLE_USER,
     ];
