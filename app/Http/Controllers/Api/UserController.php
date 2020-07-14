@@ -254,8 +254,8 @@ class UserController extends Controller
         $name = $request->get('name');
 
         if ($user->email !== $email) {
-            if(
-            User::query()
+            if (
+                User::query()
                 ->where('email', $email)
                 ->exists()
             ) {
