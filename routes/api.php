@@ -36,8 +36,5 @@ Route::group(
 
         //user verification
         Route::get('login/email/verify/{token}', 'Auth\VerificationController@verify');
-
-        Route::get('rights/permissions', 'Api\RightsController@getPermissions');
-        Route::get('rights/roles', 'Api\RightsController@getRoles');
     }
 );

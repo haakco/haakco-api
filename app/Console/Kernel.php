@@ -4,7 +4,6 @@ namespace App\Console;
 
 use App\Console\Commands\AgentStringParseConsole;
 use App\Console\Commands\EmailAddConsole;
-use App\Console\Commands\TeamRolesSync;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -31,10 +30,6 @@ class Kernel extends ConsoleKernel
         $schedule
             ->command(EmailAddConsole::class)
             ->everyFifteenMinutes();
-
-        $schedule
-            ->command(TeamRolesSync::class)
-            ->hourly();
 
         $schedule->command(
             AgentStringParseConsole::class,

@@ -5,8 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Facades\UserPermission;
 use App\Http\Controllers\Controller;
 use App\Libraries\User\UserLibrary;
-use App\Models\Company;
-use App\Models\Enum\Rights\RightsEnum;
+use App\Models\Enum\PermissionsEnum;
 use App\Models\File;
 use App\Models\User;
 use Exception;
@@ -68,7 +67,7 @@ class UserController extends Controller
     {
         UserPermission::testIfUserHasAnyPermission(
             [
-                RightsEnum::SYSTEM_PERMISSION_USERS_VIEW,
+                PermissionsEnum::SYSTEM_USERS_VIEW_NAME,
             ]
         );
         return response()->json($userLibrary->getSimpleUserDetails($user));
@@ -86,7 +85,7 @@ class UserController extends Controller
     {
         UserPermission::testIfUserHasAnyPermission(
             [
-                RightsEnum::SYSTEM_PERMISSION_USERS_EDIT,
+                PermissionsEnum::CLIENT_USERS_EDIT_NAME,
             ]
         );
 
@@ -112,7 +111,7 @@ class UserController extends Controller
     {
         UserPermission::testIfUserHasAnyPermission(
             [
-                RightsEnum::SYSTEM_PERMISSION_USERS_VIEW,
+                PermissionsEnum::SYSTEM_USERS_VIEW_NAME,
             ]
         );
         return response()->json($userLibrary->getAllSimpleUserDetails(User::all()));
@@ -127,23 +126,7 @@ class UserController extends Controller
         /** @var User $currentUser */
         $currentUser = Auth::user();
 
-        $companies = $currentUser
-            ->companies
-            ->reduce(
-                function ($companies, Company $company) {
-                    $companies[$company->uuid] = [
-                        'uuid' => $company->uuid,
-                        'created_at' => $company->created_at,
-                        'updated_at' => $company->updated_at,
-                        'is_system' => $company->is_system,
-                        'name' => $company->name,
-                        'slug' => $company->slug,
-                    ];
-                    return $companies;
-                },
-                []
-            );
-        return response()->json($companies);
+        return response()->json($currentUser->companiesSimple());
     }
 
     /**
@@ -152,34 +135,16 @@ class UserController extends Controller
      */
     public function getCompanies(User $user): JsonResponse
     {
-
-
         /** @var User $currentUser */
         $currentUser = Auth::user();
 
         UserPermission::testIfUserHasAnyPermission(
             [
-                RightsEnum::SYSTEM_PERMISSION_USERS_VIEW,
+                PermissionsEnum::SYSTEM_USERS_VIEW_NAME,
             ]
         );
 
-        $companies = $currentUser
-            ->companies
-            ->reduce(
-                function ($companies, Company $company) {
-                    $companies[$company->uuid] = [
-                        'uuid' => $company->uuid,
-                        'created_at' => $company->created_at,
-                        'updated_at' => $company->updated_at,
-                        'is_system' => $company->is_system,
-                        'name' => $company->name,
-                        'slug' => $company->slug,
-                    ];
-                    return $companies;
-                },
-                []
-            );
-        return response()->json($companies);
+        return response()->json($user->companiesSimple());
     }
 
     /**
@@ -191,7 +156,7 @@ class UserController extends Controller
         /** @var User $currentUser */
         $currentUser = Auth::user();
         return response()->json(
-            $currentUser->getPermissionsViaRoles()->pluck('name', 'uuid')
+            $currentUser->permissionsSimple()
         );
     }
 
@@ -205,11 +170,11 @@ class UserController extends Controller
     {
         UserPermission::testIfUserHasAnyPermission(
             [
-                RightsEnum::SYSTEM_PERMISSION_USERS_VIEW,
+                PermissionsEnum::SYSTEM_USERS_VIEW_NAME
             ]
         );
         return response()->json(
-            $user->getPermissionsViaRoles()->pluck('name', 'uuid')
+            $user->permissionsSimple()
         );
     }
 
@@ -222,7 +187,7 @@ class UserController extends Controller
         /** @var User $currentUser */
         $currentUser = Auth::user();
         return response()->json(
-            $currentUser->roles()->pluck('name', 'uuid')
+            $currentUser->rolesSimple()
         );
     }
 
@@ -236,11 +201,11 @@ class UserController extends Controller
     {
         UserPermission::testIfUserHasAnyPermission(
             [
-                RightsEnum::SYSTEM_PERMISSION_USERS_VIEW,
+                PermissionsEnum::SYSTEM_USERS_VIEW_NAME,
             ]
         );
         return response()->json(
-            $user->roles()->pluck('name', 'uuid')
+            $user->rolesSimple()
         );
     }
 
@@ -264,7 +229,7 @@ class UserController extends Controller
     /**
      * @param Request $request
      * @param \App\Models\User $user
-     * @param \App\Libraries\UserLibrary $userLibrary
+     * @param \App\Libraries\User\UserLibrary $userLibrary
      *
      * @return \Illuminate\Http\JsonResponse|void
      * @throws \Exception
@@ -278,10 +243,10 @@ class UserController extends Controller
             ]
         );
 
-        UserPermission::allowIfIsUserOrHasAnyPermission(
+        UserPermission::allowIfIsUserOrUserHasAnyPermission(
             $user,
             [
-                RightsEnum::SYSTEM_PERMISSION_USERS_EDIT,
+                PermissionsEnum::SYSTEM_USERS_EDIT_NAME,
             ]
         );
 
@@ -289,8 +254,8 @@ class UserController extends Controller
         $name = $request->get('name');
 
         if ($user->email !== $email) {
-            if (
-                User::query()
+            if(
+            User::query()
                 ->where('email', $email)
                 ->exists()
             ) {
@@ -327,7 +292,7 @@ class UserController extends Controller
         UserPermission::allowIfIsUserOrHasAnyPermission(
             $user,
             [
-                RightsEnum::SYSTEM_PERMISSION_USERS_EDIT,
+                PermissionsEnum::CLIENT_USERS_EDIT_NAME,
             ]
         );
 
