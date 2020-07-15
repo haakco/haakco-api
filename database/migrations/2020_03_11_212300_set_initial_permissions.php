@@ -1,5 +1,6 @@
 <?php
 
+use App\Libraries\Setup\SystemSetupLibrary;
 use App\Libraries\User\UserLibrary;
 use App\Libraries\User\UserRightsLibrary;
 use App\Models\Permission;
@@ -19,8 +20,7 @@ class SetInitialPermissions extends Migration
         $permissionLibrary = new UserRightsLibrary();
         $permissionLibrary->updateAll();
 
-        $userLibrary = new UserLibrary();
-        $userLibrary->createPrimarySystemUser();
+        SystemSetupLibrary::createPrimarySystemUser();
 
         $permissionLibrary->updateAll();
     }

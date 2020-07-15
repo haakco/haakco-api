@@ -3,6 +3,7 @@
 namespace App\Models\BaseModel;
 
 use App\Models\Company;
+use App\Models\Enum\Rights\RightsEnum;
 use App\Models\Permission;
 use App\Models\Role;
 use App\Models\User;
@@ -16,11 +17,11 @@ use Watson\Rememberable\Rememberable;
 
 /**
  * App\Models\BaseModel\BaseUserModel
- *
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\BaseModel\BaseOauthClient[] $clients
  * @property-read int|null $clients_count
  * @property \UuidInterface $uuid
- * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[]
+ *     $notifications
  * @property-read int|null $notifications_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\BaseModel\BaseOauthAccessToken[] $tokens
  * @property-read int|null $tokens_count
@@ -88,6 +89,33 @@ class BaseUserModel extends UserLv
             throw RoleDoesNotExist::named($roleName);
         }
         return $this->assignRole($company, $role);
+    }
+
+    public function assignCompany(Company $company): User
+    {
+        $company->assignUser($this);
+        return $this;
+    }
+
+    public function assignCompanyByName(string $companyName): User
+    {
+        $company = Company::firstWhere('name', $companyName);
+        $this->assignCompany($company);
+        return $this;
+    }
+
+    public function assignCompanyById(int $companyId): User
+    {
+        $company = Company::find($companyId);
+        $this->assignCompany($company);
+        return $this;
+    }
+
+    public function assignCompanyPrimary(): User
+    {
+        $company = Company::find(config('haakco.company_id'));
+        $this->assignCompany($company);
+        return $this;
     }
 
     public function permissions()
@@ -182,5 +210,12 @@ WHERE
             }
         }
         return false;
+    }
+
+
+    public function makeSytemUser()
+    {
+        $company = Company::find(config('haakco.company_id'));
+        $this->assignRoleByName($company, RightsEnum::SYSTEM_ROLE_USER);
     }
 }

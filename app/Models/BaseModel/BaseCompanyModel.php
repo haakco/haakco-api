@@ -42,7 +42,7 @@ class BaseCompanyModel extends \App\Models\BaseModel\BaseModel
         return static::whereFindByName($companyName)->first();
     }
 
-    public static function addCompany(string $companyName, bool $isPrimary = false): Company
+    public static function addCompany(string $companyName): Company
     {
         $slug = Str::slug($companyName, '-');
 
@@ -55,24 +55,11 @@ class BaseCompanyModel extends \App\Models\BaseModel\BaseModel
         $company = new Company();
         $company->name = $companyName;
         $company->slug = $slug;
-        $company->is_system = $isPrimary;
         $company->save();
-
-        if ($isPrimary) {
-            //Set primary company id to 0 to help make it obvious
-            DB::update(
-                'update ' . (new Company())->getTable() . ' set id = 0 where name = :name',
-                [
-                    'name' => $companyName,
-                ]
-            );
-            $company->id = 0;
-            $company->save();
-        }
         return $company;
     }
 
-    public function assignUser(User $user, $isOwner = false): Company
+    public function assignUser(User $user, $isOwner = false, $isSystem = false): Company
     {
         $this->users()->attach(
             [
@@ -82,9 +69,6 @@ class BaseCompanyModel extends \App\Models\BaseModel\BaseModel
             ]
         );
         $user->assignRoleByName($this, RightsEnum::CLIENT_ROLE_USER);
-        if ($this->is_system) {
-            $user->assignRoleByName($this, RightsEnum::SYSTEM_ROLE_USER);
-        }
         return $this;
     }
 }

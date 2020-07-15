@@ -51,7 +51,8 @@ class CreatePermissionTables extends Migration
                 $table->foreign('company_id')
                     ->references('id')
                     ->on('users.companies')
-                    ->onDelete('cascade');
+                    ->onDelete('cascade')
+                    ->onUpdate('cascade');
 
                 $table->foreign('user_id')
                     ->references('id')
