@@ -14,12 +14,22 @@ use App\Models\FileType;
 use App\Models\User;
 use App\Models\UserImage;
 use Illuminate\Http\UploadedFile;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Hash;
+use stdClass;
 
 class UserLibrary
 {
 
+    /**
+     * @param string $name
+     * @param string $userName
+     * @param string $email
+     * @param string $password
+     *
+     * @return \App\Models\User|\Illuminate\Database\Eloquent\Model
+     * @throws \Exception
+     */
     public function createNewUser(string $name, string $userName, string $email, string $password)
     {
         $user = User::create(
@@ -32,29 +42,14 @@ class UserLibrary
             ]
         );
 
-        $companyLibrary = new CompanyLibrary();
-        $companyLibrary->setupNewCompany($user, $user->username);
+        if (config('haakco.create_company_for_each_user')) {
+            $companyLibrary = new CompanyLibrary();
+            $companyLibrary->setupNewCompany($user, $user->username);
+        } else {
+            $user->assignCompanyPrimary();
+        }
 
         return $user;
-    }
-
-    /**
-     * @throws \Exception
-     */
-    public function createPrimarySystemUser(): void
-    {
-        $primaryUser = User::create(
-            [
-                'email_verified_at' => now(),
-                'name' => config('haakco.primary_user')['name'],
-                'username' => config('haakco.primary_user')['username'],
-                'email' => config('haakco.primary_user')['email'],
-                'password' => Hash::make(config('haakco.primary_user')['password']),
-            ]
-        );
-
-        $companyLibrary = new CompanyLibrary();
-        $companyLibrary->setupPrimaryCompany($primaryUser);
     }
 
     /**
@@ -96,9 +91,9 @@ class UserLibrary
         return $email->email_gravatars->first()->url;
     }
 
-    public function getSimpleUserDetails(User $user): \stdClass
+    public function getSimpleUserDetails(User $user): stdClass
     {
-        $result = new \stdClass();
+        $result = new stdClass();
 
         $result->uuid = $user->uuid;
         $result->created_at = $user->created_at;
@@ -113,7 +108,7 @@ class UserLibrary
         return $result;
     }
 
-    public function getAllSimpleUserDetails($users)
+    public function getAllSimpleUserDetails($users): Collection
     {
         $result = [];
         foreach ($users as $user) {

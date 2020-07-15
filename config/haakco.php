@@ -2,6 +2,8 @@
 
 return [
     'company_name' => env('HAAK_COMPANY_NAME', 'haakco'),
+    'company_id' => 0,
+    'create_company_for_each_user' => env('HAAK_CREATE_COMPANY_FOR_EACH_USER', false),
     'short_url' => env('HAAK_SHORT_URL', 'https://example.com'),
     'primary_user' => [
         'name' => env('HAAK_ADMIN_USER', 'Admin User'),
