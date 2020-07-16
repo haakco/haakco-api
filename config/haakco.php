@@ -16,6 +16,11 @@ return [
             env('HAAK_SERVER_ADMIN_EMAIL', 'serveradmin@example.com'),
     ],
 
+    'ip_authed_list' => explode(
+        ',',
+        env('HAAK_IP_AUTHED_LIST', '127.0.0.1,::1')
+    ),
+
     'rights_tables' => [
         'roles' => 'users.roles',
         'permissions' => 'users.permissions',
