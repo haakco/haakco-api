@@ -103,6 +103,7 @@ class UserLibrary
         $result->permissions = $user->permissionsSimple();
         $result->roles = $user->rolesSimple();
         $result->email = $user->email;
+        $result->emails = $user->emailsSimple();
         $result->imgUrl = $this->getUserImage($user);
 
         return $result;
