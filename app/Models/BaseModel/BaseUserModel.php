@@ -134,6 +134,13 @@ class BaseUserModel extends UserLv
             ->values();
     }
 
+    public function emailsSimple()
+    {
+        return $this->emails
+            ->pluck('name', 'uuid')
+            ->sortBy('name');
+    }
+
     public function permissionsSimple()
     {
         return $this->permissions()
